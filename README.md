@@ -16,6 +16,7 @@
 ```bash
 
     # Availables
+    slot="default"  # Add a content
     slot="overlay"  # Add an overlay between the default content and the background
     slot="footer"   # Add a footer to the component
 
