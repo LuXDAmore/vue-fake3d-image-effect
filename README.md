@@ -1,13 +1,13 @@
-# Vue Cursor Fx
+# Vue Fake3d image effect
 
-[DEMO](https://luxdamore.github.io/vue-cursor-fx)
+[DEMO](https://luxdamore.github.io/vue-fake3d-image-effect)
 
 ## Installation
 
 ```bash
 
     # Deps
-    npm install --save @luxdamore/vue-cursor-fx
+    npm install --save @luxdamore/vue-fake3d-image-effect
 
 ```
 
@@ -18,12 +18,12 @@
 ```js
 
     // Component
-    import { CursorFx } from '@luxdamore/vue-cursor-fx';
+    import { Fake3dImageEffect } from '@luxdamore/vue-fake3d-image-effect';
 
     // Install
     Vue.component(
-        CursorFx.name,
-        CursorFx
+        Fake3dImageEffect.name,
+        Fake3dImageEffect
     );
 
 ```
@@ -33,11 +33,11 @@
 ```js
 
     // Plugin
-    import CursorFx from '@luxdamore/vue-cursor-fx';
+    import Fake3dImageEffect from '@luxdamore/vue-fake3d-image-effect';
 
     // Install
     Vue.use(
-        CursorFx
+        Fake3dImageEffect
     );
 
 ```
@@ -50,18 +50,18 @@
     <html>
         <head>
 
-            <!-- CursorFx style -->
+            <!-- Fake3dImageEffect style -->
 
                 <!-- Old way -->
-                <link rel="stylesheet" href="../dist/CursorFx.css" />
+                <link rel="stylesheet" href="../dist/Fake3dImageEffect.css" />
                 <!-- end old way -->
 
                 <!-- New way -->
-                <link rel="preload" href="./dist/CursorFx.css" as="style" onload="this.rel='stylesheet'" />
-                <link rel="preload" href="./dist/CursorFx.umd.min.js" as="script" />
+                <link rel="preload" href="./dist/Fake3dImageEffect.css" as="style" onload="this.rel='stylesheet'" />
+                <link rel="preload" href="./dist/Fake3dImageEffect.umd.min.js" as="script" />
                 <!-- end new way -->
 
-            <!-- end CursorFx style -->
+            <!-- end Fake3dImageEffect style -->
 
         </head>
         <body>
@@ -70,9 +70,9 @@
                 Others script (ex. VueJs) and html.
             -->
 
-            <!-- CursorFx script -->
-                <script src="./dist/CursorFx.umd.min.js"></script>
-            <!-- end CursorFx script -->
+            <!-- Fake3dImageEffect script -->
+                <script src="./dist/Fake3dImageEffect.umd.min.js"></script>
+            <!-- end Fake3dImageEffect script -->
 
         </body>
     </html>
@@ -85,50 +85,51 @@ _Use it just one time in the main file of your project or in every views where y
 
 ```html
 
-    <cursor-fx />
+    <fake3d-image-effect
+            v-once
+            id="about"
+            class="about"
+            image="/img/about/about.jpg"
+            image-map="/img/about/about-map.jpg"
+        >
+            <template #overlay>
+                <span class="overlay overlay__1 overlay__blue" />
+            </template>
+
+            <template #content>
+                <div class="container">
+                    <h2>
+                        Stare out cat door then go back inside
+                    </h2>
+                    <p>
+                        Cat ipsum dolor sit amet, find box a little too small and curl up with fur hanging out,lick left leg for ninety minutes, still dirty. Stand in doorway, unwilling to chose whether to stay in or go out unwrap toilet paper i vomit in the bed in the middle of the night. Find empty spot in cupboard and sleep all day suddenly go on wild-eyed crazy rampage but walk on keyboard demand to have some of whatever the human is cooking, then sniff the offering and walk away. Cat slap dog in face lick plastic bags so cats woo and refuse to leave cardboard box and wack the mini furry mouse if it fits, i sits.
+                    </p>
+                </div>
+            </template>
+        </fake3d-image-effect>
 
 ```
-
-##### Integrations
-
-###### VueRouter
-
-```html
-
-    <!-- App.vue -->
-    <div id="app">
-
-        <router-view></router-view>
-
-        <cursor-fx />
-
-    </div>
-
-```
-
-###### NuxtJs
-
-- For the entire website: place the component in the desired layouts (ex. layouts/default.vue);
-- For some pages only: place the component in the desired pages (ex. pages/index.vue).
 
 ## Issues
 
-Please make sure to read the [Issue Reporting Checklist](https://github.com/LuXDAmore/vue-cursor-fx/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
+Please make sure to read the [Issue Reporting Checklist](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
 ## Contribution
 
-Please make sure to read the [Contributing Guide](https://github.com/LuXDAmore/vue-cursor-fx/blob/master/.github/ISSUE_TEMPLATE/feature_request.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/.github/ISSUE_TEMPLATE/feature_request.md) before making a pull request.
 
 ## Changelog
 
-Details changes for each release are documented in the [release notes](https://github.com/LuXDAmore/vue-cursor-fx/blob/master/CHANGELOG.md).
+Details changes for each release are documented in the [release notes](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/CHANGELOG.md).
 
-## License
+### Donate me a beer, we can be good friends
 
-[MIT](http://opensource.org/licenses/MIT)
+_If you feel generous and want to give me a [beer](https://github.com/LuXDAmore/vue-cursor-fx/blob/master/.github/FUNDING.yml)._
 
-Copyright (c) 2019-present Luca Iaconelli
+### License
 
-### Inspired by
+[MIT](http://opensource.org/licenses/MIT) ~ Copyright (c) 2019-present Luca Iaconelli
 
-[CustomCursors by Tympanus](https://tympanus.net/Tutorials/CustomCursors/index3.html)
+#### Inspired by
+
+[Fake3dImageEffect by Tympanus](https://tympanus.net/codrops/2019/02/20/how-to-create-a-fake-3d-image-effect-with-webgl/)
