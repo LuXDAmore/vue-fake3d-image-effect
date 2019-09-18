@@ -131,7 +131,7 @@ Details changes for each release are documented in the [release notes](https://g
 
 #### Donate me a beer, we can be good friends
 
-_If you feel generous, you can buy me a [beer](https://github.com/LuXDAmore/vue-cursor-fx/blob/master/.github/FUNDING.yml)_
+_If you feel generous, you can buy me a [beer](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/.github/FUNDING.yml)_
 
 #### Inspired by
 
