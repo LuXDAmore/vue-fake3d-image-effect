@@ -10,8 +10,8 @@
                     centered
                     fill-height-content
                     tag="div"
-                    image="/imgs/about.jpg"
-                    image-map="/imgs/about-map.jpg"
+                    image="imgs/about.jpg"
+                    image-map="imgs/about-map.jpg"
                 >
                     <template #overlay>
                         <span class="overlay--blue" />
