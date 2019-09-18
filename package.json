@@ -1,7 +1,7 @@
 {
     "name": "@luxdamore/vue-fake3d-image-effect",
     "version": "1.0.0",
-    "description": "An animated custom cursor effects for interactive elements like navigation - w/ VueJS - SSR Compatible",
+    "description": "A fake 3D Image Effect with WebGL - w/ VueJS - SSR Compatible",
     "author": "Luca Iaconelli <lucabelli@msn.com> (https://lucaiaconelli.it)",
     "homepage": "https://luxdamore.github.io/vue-fake3d-image-effect",
     "main": "dist/Fake3dImageEffect.umd.min.js",
@@ -71,13 +71,13 @@
         "vue-markdown-loader": "^2.4.1",
         "vue-template-compiler": "^2.6.10"
     },
-    "license": "https://github.com/LuXDAmore/vue-cursor-fx/LICENSE",
+    "license": "https://github.com/LuXDAmore/vue-fake3d-image-effect/LICENSE",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/LuXDAmore/vue-cursor-fx.git"
+        "url": "git+https://github.com/LuXDAmore/vue-fake3d-image-effect.git"
     },
     "bugs": {
-        "url": "https://github.com/LuXDAmore/vue-cursor-fx/issues"
+        "url": "https://github.com/LuXDAmore/vue-fake3d-image-effect/issues"
     },
     "engines": {
         "node": ">=8.12.0",
