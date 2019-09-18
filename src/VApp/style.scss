@@ -10,8 +10,10 @@ $backgroundColor: #FFF;
 
 .app {
 
-    height: 100vh;
     width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
 
     color: #{$color};
     color: var(--color,#{$color});
@@ -22,21 +24,26 @@ $backgroundColor: #FFF;
     .grid-container {
 
         display: grid;
-        grid-template-columns: 33% 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: "left right";
 
-        padding: 8px;
+        @media (min-width: 768px) {
 
-        .grid-cell {
-
-            padding: 16px;
+            grid-template-columns: 1fr 36%;
 
         }
 
         .left { grid-area: left; }
 
-        .right { grid-area: right; }
+        .right {
+
+            grid-area: right;
+            padding: 16px;
+            height: 100vh;
+            overflow-y: auto;
+
+        }
 
     }
 
@@ -49,6 +56,12 @@ $backgroundColor: #FFF;
     section {
 
         margin: 0 0 16px;
+
+        @media (min-width: 768px) {
+
+            margin-bottom: 0px;
+
+        }
 
     }
 }

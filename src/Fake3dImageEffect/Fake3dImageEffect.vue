@@ -1,9 +1,13 @@
 <template>
-    <section :class="classes">
+    <component
+        :is="tag"
+        :class="classes"
+        :style="styles"
+    >
 
         <div
             ref="gl"
-            class="fake3d-image-effect__image gl"
+            class="fake3d-image-effect__image"
             :data-image-original="image"
             :data-image-depth="imageMap"
             :data-horizontal-threshold="horizontal"
@@ -18,27 +22,20 @@
         </div>
 
         <div
-            v-if="$slots.content || $scopedSlots.content"
-            class="content"
+            v-if="$slots.default || $scopedSlots.default"
+            :class="contentClasses"
         >
-            <slot name="fake3d-image-effect__content" />
-        </div>
-
-        <div
-            v-if="$slots.center || $scopedSlots.center"
-            class="center"
-        >
-            <slot name="fake3d-image-effect__center" />
+            <slot />
         </div>
 
         <div
             v-if="$slots.footer || $scopedSlots.footer"
-            class="footer"
+            class="fake3d-image-effect__footer"
         >
-            <slot name="fake3d-image-effect__footer" />
+            <slot name="footer" />
         </div>
 
-    </section>
+    </component>
 </template>
 
 <script>
@@ -50,6 +47,10 @@
         name: COMPONENT,
         inheritAttrs: false,
         props: {
+            tag: {
+                type: String,
+                default: 'section',
+            },
             image: {
                 type: String,
                 required: true,
@@ -76,6 +77,18 @@
                 type: Boolean,
                 default: false,
             },
+            fillHeightContent: {
+                type: Boolean,
+                default: false,
+            },
+            width: {
+                type: String,
+                default: '100%',
+            },
+            height: {
+                type: String,
+                default: '100vh',
+            },
         },
         computed: {
             classes() {
@@ -87,6 +100,27 @@
                 );
 
                 return CLASSES;
+
+            },
+            contentClasses() {
+
+                const MAIN_CLASS = `${ COMPONENT }__content`
+                      , CLASSES = [ MAIN_CLASS ]
+                ;
+
+                this.fillHeightContent && CLASSES.push(
+                    `${ MAIN_CLASS }--fill-height`
+                );
+
+                return CLASSES;
+
+            },
+            styles() {
+
+                return {
+                    width: this.width,
+                    height: this.height,
+                };
 
             },
         },

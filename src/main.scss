@@ -27,8 +27,18 @@ pre {
 
     background-color: #EAEAEB;
     padding: 8px 16px;
+    overflow-x: auto;
 
 }
+
+h1 {
+
+    line-height: 1;
+    margin: 0 auto 16px;
+
+}
+
+p { margin: 0; }
 
 a,
 button {
@@ -70,5 +80,28 @@ a {
 
     color: #{$colorStart};
     color: var(--color-start, #{$colorStart});
+
+}
+
+// Texs
+.text {
+
+    &--white {
+
+        color: white;
+
+    }
+
+}
+
+// Overlays
+.overlay {
+
+    &--blue {
+
+        background: rgba( 0, 67, 87, .2 );
+        background: linear-gradient( 180deg, #004357, transparent );
+
+    }
 
 }
