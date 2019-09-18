@@ -18,9 +18,7 @@
                     </template>
 
                     <div class="container text--white">
-                        <h1>
-                            Usage
-                        </h1>
+                        <h1 v-text="$library.VUE_APP_TITLE" />
                         <p v-text="$library.VUE_APP_DESCRIPTION" />
                     </div>
 
