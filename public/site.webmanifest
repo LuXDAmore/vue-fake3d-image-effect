@@ -1,6 +1,6 @@
 {
-    "name": "CursorFx",
-    "short_name": "CFx",
+    "name": "Fake3dImageEffect",
+    "short_name": "F3dIE",
     "icons": [
         {
             "src": "android-chrome-96x96.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "https://luxdamore.github.io/vue-cursor-fx",
+    "start_url": "https://luxdamore.github.io/vue-fake3d-image-effect",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"
