@@ -8,12 +8,12 @@ import VApp from './VApp';
 
 // Component
 import Library from './library';
-import { CursorFx } from './CursorFx';
+import { Fake3dImageEffect } from './Fake3dImageEffect';
 
 // Install
 Vue.component(
-    CursorFx.name,
-    CursorFx
+    Fake3dImageEffect.name,
+    Fake3dImageEffect
 );
 
 // Library data

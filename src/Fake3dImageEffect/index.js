@@ -1,5 +1,5 @@
 // Import vue component
-import component from './CursorFx.vue';
+import component from './Fake3dImageEffect.vue';
 
 const plugin = {
     install(
@@ -15,14 +15,10 @@ const plugin = {
 };
 
 // To allow use as module (npm/webpack/etc.) export component
-export { component as CursorFx };
+export { component as Fake3dImageEffect };
 export default plugin;
 
 // Auto install
-if( typeof window !== 'undefined' && window.Vue ) {
-
-    window.Vue.use(
-        plugin
-    );
-
-}
+typeof window !== 'undefined' && window.Vue && window.Vue.use(
+    plugin
+);
