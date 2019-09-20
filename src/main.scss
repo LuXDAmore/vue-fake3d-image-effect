@@ -1,5 +1,5 @@
-$colorStart: #CB2D3E;
-$colorEnd: #EF473A;
+$colorStart: #76B69C;
+$colorEnd: #004357;
 
 :root {
 
@@ -22,25 +22,10 @@ body {
 
 }
 
-pre {
-
-    background-color: #EAEAEB;
-    padding: 8px 16px;
-    overflow-x: auto;
-
-}
-
-h1 {
-
-    line-height: 1;
-    margin: 0 auto 16px;
-
-}
-
-p { margin: 0; }
-
-a,
-button {
+.markdown-body button,
+.markdown-body a,
+button,
+a {
 
     display: inline-block;
     margin: 0 auto;
@@ -53,16 +38,18 @@ button {
 
 }
 
+.markdown-body button,
+.markdown-body .btn,
+.btn,
 button {
 
     color: #FFF;
-
-    padding: 8px 16px;
-
-    appearance: none !important;
-
-    background-image: linear-gradient( to right, #{$colorStart} 0%, #{$colorEnd} 51%, #{$colorStart} 100% );
-    background-image: linear-gradient( to right, var(--color-start, #{$colorStart}) 0%, var(--color-end, #{$colorEnd}) 51%, var(--color-start, #{$colorStart}) 100% );
+    padding: 8px 24px;
+    margin-top: 24px;
+    appearance: none;
+    background: rgba( 0, 67, 87, .2 );
+    background-image: linear-gradient( 90deg, #{$colorStart}, #{$colorEnd});
+    background-image: linear-gradient( 90deg, var(--color-start, #{$colorStart}), var(--color-end, #{$colorEnd}) );
     background-position: left center;
 
     &:hover {
@@ -73,12 +60,22 @@ button {
 
 }
 
+.markdown-body a,
 a {
-
-    padding: 0 2px;
 
     color: #{$colorStart};
     color: var(--color-start, #{$colorStart});
+
+}
+
+// Display
+.d {
+
+    &--block {
+
+        display: block;
+
+    }
 
 }
 
@@ -99,7 +96,8 @@ a {
     &--blue {
 
         background: rgba( 0, 67, 87, .2 );
-        background: linear-gradient( 180deg, #004357, transparent );
+        background: linear-gradient( 180deg, #{$colorEnd}, transparent );
+        background: linear-gradient( 180deg, var(--color-end, #{$colorEnd}), transparent );
 
     }
 
