@@ -21,14 +21,16 @@
                         <h2>
                             FAKE WEBGL IMAGE EFFECT
                         </h2>
-                        <p v-text="$library.VUE_APP_DESCRIPTION" />
-                        <small class="d--block">
-                            <em>watch this effect from your phone</em>
-                        </small>
+                        <p>
+                            <small>
+                                📱 <em>take a look at this effect from your phone</em> ✌️
+                            </small>
+                        </p>
                         <a
                             class="btn"
                             href="https://github.com/LuXDAmore/vue-fake3d-image-effect"
                             target="_blank"
+                            rel="noopener"
                         >
                             GITHUB
                         </a>
