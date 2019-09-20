@@ -24,7 +24,7 @@ $backgroundColor: #FFF;
     .grid-container {
 
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 100% 100%;
         grid-template-rows: 1fr;
         grid-template-areas: "left right";
 
