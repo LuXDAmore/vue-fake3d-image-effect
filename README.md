@@ -11,17 +11,6 @@
 
 ```
 
-### Slots
-
-```bash
-
-    # Availables
-    slot="default"  # Add some content
-    slot="overlay"  # Add an overlay between the default content and the background
-    slot="footer"   # Add a footer to the component
-
-```
-
 ### Usage
 
 #### As a component
@@ -113,6 +102,32 @@
     </fake3d-image-effect>
 
 ```
+
+### Data
+
+#### Slots
+
+```bash
+
+    # Availables
+    slot="default"  # Add some content
+    slot="overlay"  # Add an overlay between the default content and the background
+    slot="footer"   # Add a footer to the component
+
+```
+
+#### Props
+
+| Attribute | Type | Default | Required | About |
+|:--------------------:|--------------------|:-------:|:--------:|-------------------------------------|
+| image | String | null | true | The img-src path |
+| image-map | String | null | true | The img-src-map path |
+| horizontal-threshold | [ String, Number ] | 18 | false | Sensibility for the X-ax |
+| vertical-threshold | [ String, Number ] | 23 | false | Sensibility for the Y-ax |
+| centered | Boolean | false | false | text-align: center; |
+| fill-height-content | Boolean | false | false | height: 100%; for the default slot. |
+| width | String | 100% | false | width of the component |
+| height | String | 100vh | false | height of the component |
 
 ## Issues
 
