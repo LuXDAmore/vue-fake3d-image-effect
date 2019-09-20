@@ -28,9 +28,6 @@ $backgroundColor: #FFF;
             grid-template-columns: 1fr 36%;
             grid-template-areas: "left right";
 
-            /* stylelint-disable-next-line */
-            grid-auto-flow: row dense;
-
         }
 
         .left { grid-area: left; }
