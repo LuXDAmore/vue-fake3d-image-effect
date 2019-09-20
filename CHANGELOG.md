@@ -2,7 +2,7 @@
 
 ## [1.1.2](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.1.1...v1.1.2) (2019-09-20)
 
-- CHORE: Updated documentation.
+- CHORE: Updated documentations.
 
 ## [1.1.1](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.1.0...v1.1.1) (2019-09-18)
 
