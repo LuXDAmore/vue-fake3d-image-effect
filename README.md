@@ -108,7 +108,7 @@ This package is available on npm.
                 Stare out cat door then go back inside
             </h2>
             <p>
-                Cat ipsum dolor sit amet, find box a little too small and curl up with fur hanging out,lick left leg for ninety minutes, still dirty. Stand in doorway, unwilling to chose whether to stay in or go out unwrap toilet paper i vomit in the bed in the middle of the night. Find empty spot in cupboard and sleep all day suddenly go on wild-eyed crazy rampage but walk on keyboard demand to have some of whatever the human is cooking, then sniff the offering and walk away. Cat slap dog in face lick plastic bags so cats woo and refuse to leave cardboard box and wack the mini furry mouse if it fits, i sits.
+                Cat ipsum dolor sit amet, find box a little too small and curl up with fur hanging out,lick left leg for ninety minutes, still dirty. Stand in doorway, unwilling to chose whether to stay in or go out unwrap toilet paper i vomit in the bed in the middle of the night.
             </p>
         </div>
     </fake3d-image-effect>
