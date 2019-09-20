@@ -122,8 +122,8 @@
 |:--------------------:|--------------------|:-------:|:--------:|-------------------------------------|
 | image | String | null | true | The img-src path |
 | image-map | String | null | true | The img-src-map path |
-| horizontal-threshold | [ String, Number ] | 18 | false | Sensibility for the X-ax |
-| vertical-threshold | [ String, Number ] | 23 | false | Sensibility for the Y-ax |
+| horizontal-threshold | String, Number | 18 | false | Sensibility for the X-ax |
+| vertical-threshold | String, Number | 23 | false | Sensibility for the Y-ax |
 | centered | Boolean | false | false | text-align: center; |
 | fill-height-content | Boolean | false | false | height: 100%; for the default slot. |
 | width | String | 100% | false | width of the component |
@@ -148,7 +148,7 @@ Details changes for each release are documented in the [release notes](https://g
 #### Are you feeling generous today?  :)
 
 You can donate me a beer, we can be good friends
-**[Paypal](https://www.paypal.me/luxdamore)_** // **_[Patreon](https://www.patreon.com/luxdamore)**
+**[Paypal](https://www.paypal.me/luxdamore)** // **[Patreon](https://www.patreon.com/luxdamore)**
 
 _It's always a good day to be magnanimous - cit._
 
