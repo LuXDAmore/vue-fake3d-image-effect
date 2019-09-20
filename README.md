@@ -143,11 +143,11 @@ Details changes for each release are documented in the [release notes](https://g
 
 ### License
 
-[MIT](http://opensource.org/licenses/MIT) // Copyright (c) 2019-present [Luca Iaconelli](https://lucaiaconelli.it)
+[MIT](http://opensource.org/licenses/MIT) // Copyright () 2019-present [Luca Iaconelli](https://lucaiaconelli.it)
 
-#### Donate me a beer, we can be good friends
+#### Are you feeling generous?  :)
 
-_If you feel generous, you can buy me a [beer](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/.github/FUNDING.yml)_
+_Donate me a beer, we can be good friends: **[Paypal](https://www.paypal.me/luxdamore)** ~ **[Patreon](https://www.patreon.com/luxdamore)**_
 
 #### Inspired by
 
