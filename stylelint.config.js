@@ -19,6 +19,7 @@ module.exports = {
                 severity: 'warning',
                 ignore: [
                     'calc',
+                    'grid-auto-flow',
                     'border-radius',
                     'user-select-none',
                     'pointer-events',
