@@ -124,6 +124,7 @@ This package is available on npm.
 
 | Attribute | Type | Default | Required | About |
 |:--------------------:|--------------------|:-------:|:--------:|-------------------------------------|
+| tag | String | section | false | tag of the rendered VNode in DOM |
 | image | String | null | true | The img-src path |
 | image-map | String | null | true | The img-src-map path |
 | horizontal-threshold | String, Number | 18 | false | Sensibility for the X-ax |
