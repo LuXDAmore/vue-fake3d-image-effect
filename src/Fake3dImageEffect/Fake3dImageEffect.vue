@@ -64,14 +64,14 @@
                     Number,
                     String,
                 ],
-                default: 20,
+                default: 18,
             },
             vertical: {
                 type: [
                     Number,
                     String,
                 ],
-                default: 25,
+                default: 23,
             },
             centered: {
                 type: Boolean,
