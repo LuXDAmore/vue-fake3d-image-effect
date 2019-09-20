@@ -18,8 +18,20 @@
                     </template>
 
                     <div class="container text--white">
-                        <h1 v-text="$library.VUE_APP_TITLE" />
+                        <h2>
+                            FAKE WEBGL IMAGE EFFECT
+                        </h2>
                         <p v-text="$library.VUE_APP_DESCRIPTION" />
+                        <small class="d--block">
+                            <em>watch this effect from your phone</em>
+                        </small>
+                        <a
+                            class="btn"
+                            href="https://github.com/LuXDAmore/vue-fake3d-image-effect"
+                            target="_blank"
+                        >
+                            GITHUB
+                        </a>
                     </div>
 
                     <template #footer>
@@ -32,7 +44,7 @@
 
             <aside class="grid-cell right">
                 <section class="readme">
-                    <readme />
+                    <readme class="markdown-body" />
                 </section>
             </aside>
 
