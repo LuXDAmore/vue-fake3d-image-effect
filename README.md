@@ -124,15 +124,15 @@ This package is available on npm.
 
 | Attribute | Type | Default | Required | About |
 |:--------------------:|--------------------|:-------:|:--------:|-------------------------------------|
-| tag | String | section | false | tag of the rendered VNode in DOM |
+| tag | String | section | false | Tag of the rendered VNode in DOM |
 | image | String | null | true | The img-src path |
 | image-map | String | null | true | The img-src-map path |
 | horizontal-threshold | String, Number | 18 | false | Sensibility for the X-ax |
 | vertical-threshold | String, Number | 23 | false | Sensibility for the Y-ax |
-| centered | Boolean | false | false | text-align: center; |
-| fill-height-content | Boolean | false | false | height: 100%; for the default slot. |
-| width | String | 100% | false | width of the component |
-| height | String | 100vh | false | height of the component |
+| centered | Boolean | false | false | Style, `text-align: center` |
+| fill-height-content | Boolean | false | false | Style `height: 100%` for the default slot |
+| width | String | 100% | false | Width of component |
+| height | String | 100vh | false | Height of component |
 
 ## Issues
 
