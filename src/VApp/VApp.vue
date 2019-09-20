@@ -31,7 +31,7 @@
             </section>
 
             <aside class="grid-cell right">
-                <section>
+                <section class="readme">
                     <readme />
                 </section>
             </aside>
@@ -50,6 +50,31 @@
         name: 'v-app',
         components: {
             readme,
+        },
+        mounted() {
+
+            this.$nextTick(
+                this.initReadmeLinks
+            );
+
+        },
+        methods: {
+            initReadmeLinks() {
+
+                const links = document.querySelectorAll(
+                    '.readme > article a'
+                );
+
+                for( var i = 0; i < links.length; i ++ ) {
+
+                    links[ i ].setAttribute(
+                        'target',
+                        '_blank'
+                    );
+
+                }
+
+            },
         },
     };
 </script>
