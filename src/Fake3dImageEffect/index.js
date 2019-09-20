@@ -21,7 +21,7 @@ const plugin = {
     },
 };
 
-// Auto install
+// Auto install for browsers
 let GlobalVue = null;
 
 if( typeof window !== 'undefined' )
