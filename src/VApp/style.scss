@@ -13,8 +13,6 @@ $backgroundColor: #FFF;
     width: 100%;
     min-height: 100vh;
 
-    overflow: hidden;
-
     color: #{$color};
     color: var(--color,#{$color});
 
@@ -23,14 +21,13 @@ $backgroundColor: #FFF;
 
     .grid-container {
 
-        display: grid;
-        grid-template-columns: 100% 100%;
-        grid-template-rows: 1fr;
-        grid-template-areas: "left right";
-
         @media (min-width: 768px) {
 
+            display: grid;
+            grid-template-rows: 1fr;
             grid-template-columns: 1fr 36%;
+            grid-auto-flow: row dense;
+            grid-template-areas: "left right";
 
         }
 
@@ -40,8 +37,13 @@ $backgroundColor: #FFF;
 
             grid-area: right;
             padding: 16px;
-            height: 100vh;
-            overflow-y: auto;
+
+            @media (min-width: 768px) {
+
+                max-height: 100vh;
+                overflow-y: auto;
+
+            }
 
         }
 
