@@ -15,8 +15,10 @@ const plugin = {
 };
 
 // To allow use as module (npm/webpack/etc.) export component
-export { component as Fake3dImageEffect };
-export default plugin;
+export default {
+    Fake3dImageEffect: component,
+    VueFake3dImageEffect: plugin,
+};
 
 // Auto install
 typeof window !== 'undefined' && window.Vue && window.Vue.use(
