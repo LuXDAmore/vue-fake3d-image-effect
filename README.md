@@ -2,11 +2,15 @@
 
 [DEMO](https://luxdamore.github.io/vue-fake3d-image-effect)
 
+A fake 3D Image Effect with WebGL - w/ VueJS - SSR Compatible
+
 ## Installation
+
+This package is available on npm.
 
 ```bash
 
-    # Deps
+    # Save it as a dep
     npm install --save @luxdamore/vue-fake3d-image-effect
 
 ```
@@ -103,7 +107,7 @@
 
 ```
 
-### Data
+### Options
 
 #### Slots
 
@@ -111,7 +115,7 @@
 
     # Availables
     slot="default"  # Add some content
-    slot="overlay"  # Add an overlay between the default content and the background
+    slot="overlay"  # Add an overlay between the default content and the background image
     slot="footer"   # Add a footer to the component
 
 ```
@@ -148,10 +152,11 @@ Details changes for each release are documented in the [release notes](https://g
 #### Are you feeling generous today?  :)
 
 You can donate me a beer, we can be good friends
-**[Paypal](https://www.paypal.me/luxdamore)** // **[Patreon](https://www.patreon.com/luxdamore)**
+__[Paypal](https://www.paypal.me/luxdamore) // [Patreon](https://www.patreon.com/luxdamore)__
 
-_It's always a good day to be magnanimous - cit._
+_It's always a good day to be magnanimous - cit_
 
 #### Inspired by
 
 [Fake3dImageEffect by Tympanus](https://tympanus.net/codrops/2019/02/20/how-to-create-a-fake-3d-image-effect-with-webgl/)
+_Check the `Preparing the image` section for how to do the `images-mapping`_
