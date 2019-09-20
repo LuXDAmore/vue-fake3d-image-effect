@@ -160,4 +160,4 @@ _It's always a good day to be magnanimous - cit_
 #### Inspired by
 
 [Fake3dImageEffect by Tympanus](https://tympanus.net/codrops/2019/02/20/how-to-create-a-fake-3d-image-effect-with-webgl/)
-_Check `Preparing the image` section for how to do the `images-mapping`_
+_Check `Preparing the image` section for how to do the `image-map`_
