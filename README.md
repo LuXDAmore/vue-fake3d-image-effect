@@ -23,12 +23,20 @@ This package is available on npm.
 
     // Component
     import { Fake3dImageEffect } from '@luxdamore/vue-fake3d-image-effect';
+    import '@luxdamore/vue-fake3d-image-effect/dist/Fake3dImageEffect.css';
 
     // Install
     Vue.component(
         Fake3dImageEffect.name,
         Fake3dImageEffect
     );
+
+    // Or in a .vue file
+    export default {
+        components: {
+            'fake3d-image-effect': Fake3dImageEffect,
+        },
+    };
 
 ```
 
@@ -106,6 +114,8 @@ This package is available on npm.
     </fake3d-image-effect>
 
 ```
+
+#### Integrations
 
 ### Options
 

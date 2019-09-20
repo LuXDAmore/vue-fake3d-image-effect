@@ -9,7 +9,7 @@ import VApp from './VApp';
 
 // Component
 import Library from './library';
-import { Fake3dImageEffect } from './Fake3dImageEffect';
+import Fake3dImageEffect from './Fake3dImageEffect/Fake3dImageEffect.vue';
 
 // Install
 Vue.component(
