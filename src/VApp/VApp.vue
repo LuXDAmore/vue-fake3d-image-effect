@@ -26,14 +26,26 @@
                                 📱 <em>take a look at this effect from your phone</em> ✌️
                             </small>
                         </p>
-                        <a
-                            class="btn"
-                            href="https://github.com/LuXDAmore/vue-fake3d-image-effect"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            GITHUB
-                        </a>
+                        <p>
+                            <a
+                                title="Github"
+                                class="button"
+                                target="_blank"
+                                rel="noopener"
+                                href="https://github.com/LuXDAmore?tab=repositories"
+                            >
+                                GITHUB
+                            </a>
+                            <a
+                                title="Vue Cursor Effect"
+                                class="button"
+                                target="_blank"
+                                rel="noopener"
+                                href="https://luxdamore.github.io/vue-cursor-fx"
+                            >
+                                | Vue Cursor Effect |
+                            </a>
+                        </p>
                     </div>
 
                     <template #footer>
