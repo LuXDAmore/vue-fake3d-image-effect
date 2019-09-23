@@ -1,4 +1,4 @@
-import GyroNorm from 'gyronorm';
+import GyroNorm from 'gyronorm/dist/gyronorm.complete';
 
 // Glsl
 import fragment from './shaders/fragment.glsl';
@@ -35,7 +35,7 @@ export default class Sketch {
         this.maxTilt = 15;
 
         this.imageOriginal = this.container.getAttribute(
-            'data-image-oiginal'
+            'data-image-original'
         );
         this.imageDepth = this.container.getAttribute(
             'data-image-depth'
@@ -344,16 +344,17 @@ export default class Sketch {
     }
     gyro() {
 
-        const that = this,
+        const that = this
+            , gn = new GyroNorm()
+        ;
 
-        // TODO: Pass values to gyro.
-         gn = new GyroNorm();
-
-        gn.init(
-            {
-                gravityNormalized: true,
-            }
-            ).then(
+        gn
+            .init(
+                {
+                    gravityNormalized: true,
+                }
+            )
+            .then(
                 () => {
 
                     gn.start(
