@@ -37,13 +37,10 @@ module.exports = {
                 /\.(glsl|vs|fs|vert|frag)$/
             )
             .use(
-                [
-                    'raw-loader',
-                    'glslify-loader',
-                ]
+                'raw-loader'
             )
             .loader(
-                'glslify-loader'
+                'raw-loader'
             )
             .end()
         ;
