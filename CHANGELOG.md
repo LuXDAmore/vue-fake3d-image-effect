@@ -3,7 +3,9 @@
 ## [1.2.1](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.2.0...v1.2.1) (2019-09-23)
 
 - CHORE: Updated documentations.
+- FEAT: Auto-beautified markdown;
 - FIX: crossOrigin for images.
+- FIX: Removed `src` error import from markdowns.
 
 ## [1.2.0](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.1.2...v1.2.0) (2019-09-20)
 
