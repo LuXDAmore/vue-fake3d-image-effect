@@ -28,6 +28,27 @@ module.exports = {
             false
         );
 
+        //
+        config.module
+            .rule(
+                'glslify'
+            )
+            .test(
+                /\.(glsl|vs|fs|vert|frag)$/
+            )
+            .use(
+                [
+                    'raw-loader',
+                    'glslify-loader',
+                ]
+            )
+            .loader(
+                'glslify-loader'
+            )
+            .end()
+        ;
+
+        // Markdown
         config.module
             .rule(
                 'md'
