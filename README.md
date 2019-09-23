@@ -118,6 +118,12 @@ This package is available on npm.
 
 #### Integrations
 
+#### NuxtJS
+
+- Create a file in `plugins` folder;
+- Name it `fake3d-image.client.js`
+- Install it [as a plugin](#as-a-plugin) and import it in `nuxt.config.js` as a [*client side only*](https://nuxtjs.org/guide/plugins/#client-side-only).
+
 ### Options
 
 #### Slots
