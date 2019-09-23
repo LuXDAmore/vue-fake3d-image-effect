@@ -28,7 +28,7 @@ module.exports = {
             false
         );
 
-        //
+        // Vertex loader
         config.module
             .rule(
                 'glslify'
