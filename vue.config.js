@@ -28,6 +28,29 @@ module.exports = {
             false
         );
 
+        config.module
+            .rule(
+                'vue'
+            )
+            .use(
+                'vue-loader'
+            )
+            .loader(
+                'vue-loader'
+            )
+            .tap(
+                options => {
+
+                    options.compilerOptions.removeComments = true;
+                    options.compilerOptions.whitespace = 'condense';
+
+                    return options;
+
+                }
+            )
+        ;
+
+        // Loaders
         // Vertex loader
         config.module
             .rule(
