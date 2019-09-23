@@ -598,15 +598,12 @@ function clamp(
     upper
 ) {
 
-    if( number === number ) {
+    if( typeof upper !== 'undefined' )
+        number = number <= upper ? number : upper;
 
-        if( typeof upper !== 'undefined' )
-            number = number <= upper ? number : upper;
+    if( typeof lower !== 'undefined' )
+        number = number >= lower ? number : lower;
 
-        if( typeof lower !== 'undefined' )
-            number = number >= lower ? number : lower;
-
-    }
     return number;
 
 }
