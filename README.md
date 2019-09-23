@@ -66,12 +66,12 @@ This package is available on npm.
             <!-- Fake3dImageEffect style -->
 
                 <!-- Old way -->
-                <link rel="stylesheet" href="../dist/Fake3dImageEffect.css" />
+                <link rel="stylesheet" href="https://unpkg.com/@luxdamore/vue-fake3d-image-effect@latest/dist/Fake3dImageEffect.css" />
                 <!-- end old way -->
 
                 <!-- New way -->
-                <link rel="preload" href="./dist/Fake3dImageEffect.css" as="style" onload="this.rel='stylesheet'" />
-                <link rel="preload" href="./dist/Fake3dImageEffect.umd.min.js" as="script" />
+                <link rel="preload" href="https://unpkg.com/@luxdamore/vue-fake3d-image-effect@latest/dist/Fake3dImageEffect.css" as="style" onload="this.rel='stylesheet'" />
+                <link rel="preload" href="https://unpkg.com/@luxdamore/vue-fake3d-image-effect@latest/dist/Fake3dImageEffect.umd.min.js" as="script" />
                 <!-- end new way -->
 
             <!-- end Fake3dImageEffect style -->
@@ -84,7 +84,7 @@ This package is available on npm.
             -->
 
             <!-- Fake3dImageEffect script -->
-                <script src="./dist/Fake3dImageEffect.umd.min.js"></script>
+                <script src="https://unpkg.com/@luxdamore/vue-fake3d-image-effect@latest/dist/Fake3dImageEffect.umd.min.js"></script>
             <!-- end Fake3dImageEffect script -->
 
         </body>
