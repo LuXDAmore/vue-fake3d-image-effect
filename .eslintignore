@@ -1,6 +1,8 @@
 dist/
+docs/
 
 bower_components/
 node_modules/
 .vscode/
-docs/
+
+src/Fake3dImageEffect/fulltilt.js

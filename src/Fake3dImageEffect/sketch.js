@@ -1,16 +1,18 @@
-import GyroNorm from 'gyronorm/dist/gyronorm.complete';
+// Gyroscope
+import './fulltilt';
+import GyroNorm from 'gyronorm';
 
 // Glsl
 import fragment from './shaders/fragment.glsl';
 import vertex from './shaders/vertex.glsl';
 
-// TODO: npm install gyronorm
-// TODO: Add options for values
-// TODO: Pass values to gyro.
 export default class Sketch {
     constructor(
         element,
     ) {
+
+        if( typeof window === 'undefined' || typeof document === 'undefined' )
+            return;
 
         this.container = element;
 

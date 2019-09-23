@@ -129,7 +129,7 @@
         },
         mounted() {
 
-            this.$nextTick(
+            this.image && this.imageMap && this.$nextTick(
                 this.init
             );
 
@@ -137,12 +137,10 @@
         methods: {
             init() {
 
-                const GL = this.$refs.gl;
-
                 try {
 
                     new Sketch(
-                        GL
+                        this.$refs.gl
                     );
 
                 } catch( e ) {
