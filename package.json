@@ -1,6 +1,6 @@
 {
     "name": "@luxdamore/vue-fake3d-image-effect",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "A fake 3D Image Effect with WebGL - w/ VueJS - SSR Compatible",
     "author": "Luca Iaconelli <lucabelli@msn.com> (https://lucaiaconelli.it)",
     "homepage": "https://luxdamore.github.io/vue-fake3d-image-effect",
