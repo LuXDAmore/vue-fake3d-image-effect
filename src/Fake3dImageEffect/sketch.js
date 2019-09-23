@@ -453,8 +453,8 @@ function loadImage(
 
     const image = new Image();
 
-    image.src = url;
     image.crossOrigin = 'Anonymous';
+    image.src = url;
     image.onload = callback;
     image.onerror = () => {
 
