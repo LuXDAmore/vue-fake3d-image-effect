@@ -1,9 +1,8 @@
+import GyroNorm from 'gyronorm';
+
+// Glsl
 import fragment from './shaders/fragment.glsl';
 import vertex from './shaders/vertex.glsl';
-
-import GyroNorm from './lib/gyronorm';
-
-const gn = new GyroNorm.GyroNorm();
 
 // TODO: npm install gyronorm
 // TODO: Add options for values
@@ -27,11 +26,13 @@ export default class Sketch {
         this.ratio = window.devicePixelRatio;
         this.windowWidth = window.innerWidth;
         this.windowHeight = window.innerHeight;
+
         this.mouseX = 0;
         this.mouseY = 0;
-
         this.mouseTargetX = 0;
         this.mouseTargetY = 0;
+
+        this.maxTilt = 15;
 
         this.imageOriginal = this.container.getAttribute(
             'data-image-oiginal'
@@ -61,7 +62,6 @@ export default class Sketch {
         this.gyro();
 
     }
-
     addShader(
         source,
         type
@@ -149,7 +149,6 @@ export default class Sketch {
         );
 
     }
-
     resize() {
 
         this.resizeHandler();
@@ -162,7 +161,6 @@ export default class Sketch {
         );
 
     }
-
     createScene() {
 
         this.program = this.gl.createProgram();
@@ -234,7 +232,6 @@ export default class Sketch {
         );
 
     }
-
     addTexture() {
 
         const that = this;
@@ -347,11 +344,11 @@ export default class Sketch {
     }
     gyro() {
 
-        const that = this;
-
-        this.maxTilt = 15;
+        const that = this,
 
         // TODO: Pass values to gyro.
+         gn = new GyroNorm();
+
         gn.init(
             {
                 gravityNormalized: true,
@@ -386,7 +383,8 @@ export default class Sketch {
                 e => {
 
                     console.error(
-                        'not supported'
+                        'Gyro not supported',
+                        e
                     );
 
                 }
@@ -413,7 +411,6 @@ export default class Sketch {
         );
 
     }
-
     render() {
 
         const now = new Date().getTime()
@@ -613,4 +610,3 @@ function clamp(
     return number;
 
 }
-// new Sketch();
