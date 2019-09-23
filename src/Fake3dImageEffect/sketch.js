@@ -11,9 +11,6 @@ export default class Sketch {
         element,
     ) {
 
-        if( typeof window === 'undefined' || typeof document === 'undefined' )
-            return;
-
         this.container = element;
 
         this.canvas = document.createElement(
