@@ -91,9 +91,11 @@ module.exports = {
             )
             .options(
                 {
+                    wrapper: 'article',
                     raw: true,
                     breaks: true,
-                    wrapper: 'article',
+                    typographer: false,
+                    preventExtract: true,
                 }
             )
         ;
