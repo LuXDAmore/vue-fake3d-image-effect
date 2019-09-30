@@ -94,7 +94,7 @@ module.exports = {
                     wrapper: 'article',
                     raw: true,
                     breaks: true,
-                    typographer: false,
+                    typographer: true,
                     preventExtract: true,
                 }
             )
