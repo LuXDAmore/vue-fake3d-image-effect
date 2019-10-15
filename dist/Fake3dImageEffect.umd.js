@@ -149,34 +149,31 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
  */
 (function (window) {
   // Only initialize the FULLTILT API if it is not already attached to the DOM
-  if (window.FULLTILT !== undefined && window.FULLTILT !== null) {
-    return;
-  }
-
-  var M_PI = Math.PI;
-  var M_PI_2 = M_PI / 2;
-  var M_2_PI = 2 * M_PI; // Degree to Radian conversion
-
-  var degToRad = M_PI / 180;
-  var radToDeg = 180 / M_PI; // Internal device orientation + motion variables
-
-  var sensors = {
-    "orientation": {
+  if (window.FULLTILT !== undefined && window.FULLTILT !== null) return;
+  var M_PI = Math.PI,
+      M_PI_2 = M_PI / 2,
+      M_2_PI = 2 * M_PI,
+      // Degree to Radian conversion
+  degToRad = M_PI / 180,
+      radToDeg = 180 / M_PI,
+      // Internal device orientation + motion variables
+  sensors = {
+    'orientation': {
       active: false,
       callbacks: [],
       data: undefined
     },
-    "motion": {
+    'motion': {
       active: false,
       callbacks: [],
       data: undefined
     }
-  };
-  var screenActive = false; // Internal screen orientation variables
-
-  var hasScreenOrientationAPI = window.screen && window.screen.orientation && window.screen.orientation.angle !== undefined && window.screen.orientation.angle !== null ? true : false;
-  var screenOrientationAngle = (hasScreenOrientationAPI ? window.screen.orientation.angle : window.orientation || 0) * degToRad;
-  var SCREEN_ROTATION_0 = 0,
+  },
+      screenActive = false,
+      // Internal screen orientation variables
+  hasScreenOrientationAPI = window.screen && window.screen.orientation && window.screen.orientation.angle !== undefined && window.screen.orientation.angle !== null ? true : false,
+      screenOrientationAngle = (hasScreenOrientationAPI ? window.screen.orientation.angle : window.orientation || 0) * degToRad,
+      SCREEN_ROTATION_0 = 0,
       SCREEN_ROTATION_90 = M_PI_2,
       SCREEN_ROTATION_180 = M_PI,
       SCREEN_ROTATION_270 = M_2_PI / 3,
@@ -187,18 +184,14 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
 
     if (x === 0 || isNaN(x)) return x;
     return x > 0 ? 1 : -1;
-  } ///// Promise-based Sensor Data checker //////
+  } // /// Promise-based Sensor Data checker //////
 
 
   function SensorCheck(sensorRootObj) {
     var promise = new Promise(function (resolve, reject) {
       var runCheck = function runCheck(tries) {
         setTimeout(function () {
-          if (sensorRootObj && sensorRootObj.data) {
-            resolve();
-          } else if (tries >= 20) {
-            reject();
-          } else {
+          if (sensorRootObj && sensorRootObj.data) resolve();else if (tries >= 20) reject();else {
             runCheck(++tries);
           }
         }, 50);
@@ -207,15 +200,11 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       runCheck(0);
     });
     return promise;
-  } ////// Internal Event Handlers //////
+  } // //// Internal Event Handlers //////
 
 
   function handleScreenOrientationChange() {
-    if (hasScreenOrientationAPI) {
-      screenOrientationAngle = (window.screen.orientation.angle || 0) * degToRad;
-    } else {
-      screenOrientationAngle = (window.orientation || 0) * degToRad;
-    }
+    if (hasScreenOrientationAPI) screenOrientationAngle = (window.screen.orientation.angle || 0) * degToRad;else screenOrientationAngle = (window.orientation || 0) * degToRad;
   }
 
   function handleDeviceOrientationChange(event) {
@@ -232,11 +221,11 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
     for (var i in sensors.motion.callbacks) {
       sensors.motion.callbacks[i].call(this);
     }
-  } ///// FULLTILT API Root Object /////
+  } // /// FULLTILT API Root Object /////
 
 
   var FULLTILT = {};
-  FULLTILT.version = "0.5.3"; ///// FULLTILT API Root Methods /////
+  FULLTILT.version = '0.5.3'; // /// FULLTILT API Root Methods /////
 
   FULLTILT.getDeviceOrientation = function (options) {
     var promise = new Promise(function (resolve, reject) {
@@ -266,7 +255,7 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       });
     });
     return promise;
-  }; ////// FULLTILT.Quaternion //////
+  }; // //// FULLTILT.Quaternion //////
 
 
   FULLTILT.Quaternion = function (x, y, z, w) {
@@ -287,11 +276,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
     };
 
     this.setFromEuler = function () {
-      var _x, _y, _z;
+      var _x, _y, _z, _x_2, _y_2, _z_2, cX, cY, cZ, sX, sY, sZ;
 
-      var _x_2, _y_2, _z_2;
-
-      var cX, cY, cZ, sX, sY, sZ;
       return function (euler) {
         euler = euler || {};
         _z = (euler.alpha || 0) * degToRad;
@@ -369,8 +355,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         var qax = a.x,
             qay = a.y,
             qaz = a.z,
-            qaw = a.w;
-        var qbx = b.x,
+            qaw = a.w,
+            qbx = b.x,
             qby = b.y,
             qbz = b.z,
             qbw = b.w;
@@ -401,9 +387,10 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       return q;
     },
     rotateByAxisAngle: function () {
-      var outputQuaternion = new FULLTILT.Quaternion();
-      var transformQuaternion = new FULLTILT.Quaternion();
-      var halfAngle, sA;
+      var outputQuaternion = new FULLTILT.Quaternion(),
+          transformQuaternion = new FULLTILT.Quaternion(),
+          halfAngle,
+          sA;
       return function (targetQuaternion, axis, angle) {
         halfAngle = (angle || 0) / 2;
         sA = Math.sin(halfAngle);
@@ -417,7 +404,7 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         return FULLTILT.Quaternion.prototype.normalize(outputQuaternion);
       };
     }()
-  }; ////// FULLTILT.RotationMatrix //////
+  }; // //// FULLTILT.RotationMatrix //////
 
   FULLTILT.RotationMatrix = function (m11, m12, m13, m21, m22, m23, m31, m32, m33) {
     var outMatrix;
@@ -453,9 +440,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
     };
 
     this.setFromEuler = function () {
-      var _x, _y, _z;
+      var _x, _y, _z, cX, cY, cZ, sX, sY, sZ;
 
-      var cX, cY, cZ, sX, sY, sZ;
       return function (euler) {
         euler = euler || {};
         _z = (euler.alpha || 0) * degToRad;
@@ -541,8 +527,9 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
   FULLTILT.RotationMatrix.prototype = {
     constructor: FULLTILT.RotationMatrix,
     multiplyMatrices: function () {
-      var matrix = new FULLTILT.RotationMatrix();
-      var aE, bE;
+      var matrix = new FULLTILT.RotationMatrix(),
+          aE,
+          bE;
       return function (a, b) {
         aE = a.elements;
         bE = b.elements;
@@ -551,9 +538,9 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       };
     }(),
     normalize: function normalize(matrix) {
-      var R = matrix.elements; // Calculate matrix determinant
-
-      var determinant = R[0] * R[4] * R[8] - R[0] * R[5] * R[7] - R[1] * R[3] * R[8] + R[1] * R[5] * R[6] + R[2] * R[3] * R[7] - R[2] * R[4] * R[6]; // Normalize matrix values
+      var R = matrix.elements,
+          // Calculate matrix determinant
+      determinant = R[0] * R[4] * R[8] - R[0] * R[5] * R[7] - R[1] * R[3] * R[8] + R[1] * R[5] * R[6] + R[2] * R[3] * R[7] - R[2] * R[4] * R[6]; // Normalize matrix values
 
       R[0] /= determinant;
       R[1] /= determinant;
@@ -568,10 +555,11 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       return matrix;
     },
     rotateByAxisAngle: function () {
-      var outputMatrix = new FULLTILT.RotationMatrix();
-      var transformMatrix = new FULLTILT.RotationMatrix();
-      var sA, cA;
-      var validAxis = false;
+      var outputMatrix = new FULLTILT.RotationMatrix(),
+          transformMatrix = new FULLTILT.RotationMatrix(),
+          sA,
+          cA,
+          validAxis = false;
       return function (targetRotationMatrix, axis, angle) {
         transformMatrix.identity(); // reset transform matrix
 
@@ -605,14 +593,12 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         if (validAxis) {
           outputMatrix = FULLTILT.RotationMatrix.prototype.multiplyMatrices(targetRotationMatrix, transformMatrix);
           outputMatrix = FULLTILT.RotationMatrix.prototype.normalize(outputMatrix);
-        } else {
-          outputMatrix = targetRotationMatrix;
-        }
+        } else outputMatrix = targetRotationMatrix;
 
         return outputMatrix;
       };
     }()
-  }; ////// FULLTILT.Euler //////
+  }; // //// FULLTILT.Euler //////
 
   FULLTILT.Euler = function (alpha, beta, gamma) {
     this.set = function (alpha, beta, gamma) {
@@ -672,10 +658,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         } // alpha is in [-pi, pi], make sure it is in [0, 2*pi).
 
 
-        if (_alpha < 0) {
-          _alpha += M_2_PI; // alpha [0, 2*pi)
-        } // Convert to degrees
-
+        if (_alpha < 0) _alpha += M_2_PI; // alpha [0, 2*pi)
+        // Convert to degrees
 
         _alpha *= radToDeg;
         _beta *= radToDeg;
@@ -689,14 +673,14 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       var _alpha, _beta, _gamma;
 
       return function (q) {
-        var sqw = q.w * q.w;
-        var sqx = q.x * q.x;
-        var sqy = q.y * q.y;
-        var sqz = q.z * q.z;
-        var unitLength = sqw + sqx + sqy + sqz; // Normalised == 1, otherwise correction divisor.
-
-        var wxyz = q.w * q.x + q.y * q.z;
-        var epsilon = 1e-6; // rounding factor
+        var sqw = q.w * q.w,
+            sqx = q.x * q.x,
+            sqy = q.y * q.y,
+            sqz = q.z * q.z,
+            unitLength = sqw + sqx + sqy + sqz,
+            // Normalised == 1, otherwise correction divisor.
+        wxyz = q.w * q.x + q.y * q.z,
+            epsilon = 1e-6; // rounding factor
 
         if (wxyz > (0.5 - epsilon) * unitLength) {
           _alpha = 2 * Math.atan2(q.y, q.w);
@@ -707,10 +691,10 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
           _beta = -M_PI_2;
           _gamma = 0;
         } else {
-          var aX = sqw - sqx + sqy - sqz;
-          var aY = 2 * (q.w * q.z - q.x * q.y);
-          var gX = sqw - sqx - sqy + sqz;
-          var gY = 2 * (q.w * q.y - q.x * q.z);
+          var aX = sqw - sqx + sqy - sqz,
+              aY = 2 * (q.w * q.z - q.x * q.y),
+              gX = sqw - sqx - sqy + sqz,
+              gY = 2 * (q.w * q.y - q.x * q.z);
 
           if (gX > 0) {
             _alpha = Math.atan2(aY, aX);
@@ -725,10 +709,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         } // alpha is in [-pi, pi], make sure it is in [0, 2*pi).
 
 
-        if (_alpha < 0) {
-          _alpha += M_2_PI; // alpha [0, 2*pi)
-        } // Convert to degrees
-
+        if (_alpha < 0) _alpha += M_2_PI; // alpha [0, 2*pi)
+        // Convert to degrees
 
         _alpha *= radToDeg;
         _beta *= radToDeg;
@@ -760,9 +742,9 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
   FULLTILT.Euler.prototype = {
     constructor: FULLTILT.Euler,
     rotateByAxisAngle: function () {
-      var _matrix = new FULLTILT.RotationMatrix();
+      var _matrix = new FULLTILT.RotationMatrix(),
+          outEuler;
 
-      var outEuler;
       return function (targetEuler, axis, angle) {
         _matrix.setFromEuler(targetEuler);
 
@@ -771,19 +753,19 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         return targetEuler;
       };
     }()
-  }; ///// FULLTILT.DeviceOrientation //////
+  }; // /// FULLTILT.DeviceOrientation //////
 
   FULLTILT.DeviceOrientation = function (options) {
     this.options = options || {}; // by default use UA deviceorientation 'type' ("game" on iOS, "world" on Android)
 
-    var tries = 0;
-    var maxTries = 200;
-    var successCount = 0;
-    var successThreshold = 10;
+    var tries = 0,
+        maxTries = 200,
+        successCount = 0,
+        successThreshold = 10;
     this.alphaOffsetScreen = 0;
     this.alphaOffsetDevice = undefined; // Create a game-based deviceorientation object (initial alpha === 0 degrees)
 
-    if (this.options.type === "game") {
+    if (this.options.type === 'game') {
       var setGameAlphaOffset = function (evt) {
         if (evt.alpha !== null) {
           // do regardless of whether 'evt.absolute' is also true
@@ -802,7 +784,7 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       }.bind(this);
 
       window.addEventListener('deviceorientation', setGameAlphaOffset, false); // Create a compass-based deviceorientation object (initial alpha === compass degrees)
-    } else if (this.options.type === "world") {
+    } else if (this.options.type === 'world') {
       var setCompassAlphaOffset = function (evt) {
         if (evt.absolute !== true && evt.webkitCompassAccuracy !== undefined && evt.webkitCompassAccuracy !== null && +evt.webkitCompassAccuracy >= 0 && +evt.webkitCompassAccuracy < 50) {
           this.alphaOffsetDevice = new FULLTILT.Euler(evt.webkitCompassHeading, 0, 0);
@@ -855,26 +837,22 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       this.start(callback);
     },
     getFixedFrameQuaternion: function () {
-      var euler = new FULLTILT.Euler();
-      var matrix = new FULLTILT.RotationMatrix();
-      var quaternion = new FULLTILT.Quaternion();
+      var euler = new FULLTILT.Euler(),
+          matrix = new FULLTILT.RotationMatrix(),
+          quaternion = new FULLTILT.Quaternion();
       return function () {
         var orientationData = sensors.orientation.data || {
           alpha: 0,
           beta: 0,
           gamma: 0
-        };
-        var adjustedAlpha = orientationData.alpha;
+        },
+            adjustedAlpha = orientationData.alpha;
 
         if (this.alphaOffsetDevice) {
           matrix.setFromEuler(this.alphaOffsetDevice);
           matrix.rotateZ(-this.alphaOffsetScreen);
           euler.setFromRotationMatrix(matrix);
-
-          if (euler.alpha < 0) {
-            euler.alpha += 360;
-          }
-
+          if (euler.alpha < 0) euler.alpha += 360;
           euler.alpha %= 360;
           adjustedAlpha -= euler.alpha;
         }
@@ -894,25 +872,21 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       };
     }(),
     getFixedFrameMatrix: function () {
-      var euler = new FULLTILT.Euler();
-      var matrix = new FULLTILT.RotationMatrix();
+      var euler = new FULLTILT.Euler(),
+          matrix = new FULLTILT.RotationMatrix();
       return function () {
         var orientationData = sensors.orientation.data || {
           alpha: 0,
           beta: 0,
           gamma: 0
-        };
-        var adjustedAlpha = orientationData.alpha;
+        },
+            adjustedAlpha = orientationData.alpha;
 
         if (this.alphaOffsetDevice) {
           matrix.setFromEuler(this.alphaOffsetDevice);
           matrix.rotateZ(-this.alphaOffsetScreen);
           euler.setFromRotationMatrix(matrix);
-
-          if (euler.alpha < 0) {
-            euler.alpha += 360;
-          }
-
+          if (euler.alpha < 0) euler.alpha += 360;
           euler.alpha %= 360;
           adjustedAlpha -= euler.alpha;
         }
@@ -932,8 +906,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       };
     }(),
     getFixedFrameEuler: function () {
-      var euler = new FULLTILT.Euler();
-      var matrix;
+      var euler = new FULLTILT.Euler(),
+          matrix;
       return function () {
         matrix = this.getFixedFrameMatrix();
         euler.setFromRotationMatrix(matrix);
@@ -941,8 +915,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       };
     }(),
     getScreenAdjustedEuler: function () {
-      var euler = new FULLTILT.Euler();
-      var matrix;
+      var euler = new FULLTILT.Euler(),
+          matrix;
       return function () {
         matrix = this.getScreenAdjustedMatrix();
         euler.setFromRotationMatrix(matrix);
@@ -950,10 +924,7 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
       };
     }(),
     isAbsolute: function isAbsolute() {
-      if (sensors.orientation.data && sensors.orientation.data.absolute === true) {
-        return true;
-      }
-
+      if (sensors.orientation.data && sensors.orientation.data.absolute === true) return true;
       return false;
     },
     getLastRawEventData: function getLastRawEventData() {
@@ -962,7 +933,7 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
     ALPHA: 'alpha',
     BETA: 'beta',
     GAMMA: 'gamma'
-  }; ///// FULLTILT.DeviceMotion //////
+  }; // /// FULLTILT.DeviceMotion //////
 
   FULLTILT.DeviceMotion = function (options) {
     this.options = options || {}; // placeholder object since no options are currently supported
@@ -1002,8 +973,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         x: 0,
         y: 0,
         z: 0
-      };
-      var screenAccData = {};
+      },
+          screenAccData = {};
 
       switch (screenOrientationAngle) {
         case SCREEN_ROTATION_90:
@@ -1037,8 +1008,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         x: 0,
         y: 0,
         z: 0
-      };
-      var screenAccGData = {};
+      },
+          screenAccGData = {};
 
       switch (screenOrientationAngle) {
         case SCREEN_ROTATION_90:
@@ -1072,8 +1043,8 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
         alpha: 0,
         beta: 0,
         gamma: 0
-      };
-      var screenRotRateData = {};
+      },
+          screenRotRateData = {};
 
       switch (screenOrientationAngle) {
         case SCREEN_ROTATION_90:
@@ -1105,7 +1076,7 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
     getLastRawEventData: function getLastRawEventData() {
       return sensors.motion.data || {};
     }
-  }; ////// Attach FULLTILT to root DOM element //////
+  }; // //// Attach FULLTILT to root DOM element //////
 
   window.FULLTILT = FULLTILT;
 })(window);
@@ -1494,7 +1465,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a2af1d2c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Fake3dImageEffect/Fake3dImageEffect.vue?vue&type=template&id=0b58bccc&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"afe1994c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Fake3dImageEffect/Fake3dImageEffect.vue?vue&type=template&id=0b58bccc&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",class:_vm.classes,style:(_vm.styles)},[_c('div',{ref:"gl",staticClass:"fake3d-image-effect__image",attrs:{"data-image-original":_vm.image,"data-image-depth":_vm.imageMap,"data-horizontal-threshold":_vm.horizontal,"data-vertical-threshold":_vm.vertical}}),(_vm.$slots.overlay || _vm.$scopedSlots.overlay)?_c('div',{staticClass:"fake3d-image-effect__overlay"},[_vm._t("overlay")],2):_vm._e(),(_vm.$slots.default || _vm.$scopedSlots.default)?_c('div',{class:_vm.contentClasses},[_vm._t("default",null,{"init":_vm.init})],2):_vm._e(),(_vm.$slots.footer || _vm.$scopedSlots.footer)?_c('div',{staticClass:"fake3d-image-effect__footer"},[_vm._t("footer")],2):_vm._e()])}
 var staticRenderFns = []
 
