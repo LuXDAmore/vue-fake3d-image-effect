@@ -1,9 +1,8 @@
 .fake3d-image-effect {
 
     position: relative;
-    overflow: hidden;
     z-index: 0;
-
+    overflow: hidden;
     color: currentColor;
 
     &--centered {
@@ -17,12 +16,12 @@
         position: absolute;
         top: 0;
         right: 0;
+
         bottom: 0;
         left: 0;
 
-        overflow: hidden;
-
         z-index: 0;
+        overflow: hidden;
 
     }
 
@@ -31,6 +30,7 @@
         position: absolute;
         top: 0;
         right: 0;
+
         bottom: 0;
         left: 0;
 
@@ -49,18 +49,18 @@
 
     &__content {
 
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-
-        padding: 32px 16px;
-
         position: relative;
         right: 0;
         left: 0;
 
         z-index: 2;
+        display: flex;
+        flex-direction: column;
+
+        align-content: center;
+        justify-content: center;
+
+        padding: 32px 16px;
 
         &--fill-height {
 
@@ -74,9 +74,8 @@
 
         position: relative;
 
-        padding: 8px;
-
         z-index: 3;
+        padding: 8px;
 
     }
 
