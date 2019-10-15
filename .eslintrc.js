@@ -46,6 +46,10 @@ module.exports = {
         ],
         'spaced-comment': [ 'warn', 'always' ],
         'prefer-const': 'warn',
+        'no-useless-rename': [
+            'warn',
+            {},
+        ],
         'rest-spread-spacing': [
             'warn',
             'always',
