@@ -1,10 +1,10 @@
 $color: #333;
-$backgroundColor: #FFF;
+$background-color: #fff;
 
 :root {
 
     --color: #{$color};
-    --background-color: #{$backgroundColor};
+    --background-color: #{$background-color};
 
 }
 
@@ -12,32 +12,35 @@ $backgroundColor: #FFF;
 
     width: 100%;
     min-height: 100vh;
-
     color: #{$color};
-    color: var(--color,#{$color});
-
-    background-color: #{$backgroundColor};
-    background-color: var(--background-color,#{$backgroundColor});
+    color: var( --color, #{$color} );
+    background-color: #{$background-color};
+    background-color: var( --background-color, #{$background-color} );
 
     .grid-container {
 
-        @media (min-width: 768px) {
+        @media ( min-width: 768px ) {
 
             display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 36%;
             grid-template-areas: "left right";
+            grid-template-rows: 1fr; // stylelint-disable-line
+
+            grid-template-columns: 1fr 36%; // stylelint-disable-line
 
         }
 
-        .left { grid-area: left; }
+        .left {
+
+            grid-area: left;
+
+        }
 
         .right {
 
             grid-area: right;
             padding: 16px;
 
-            @media (min-width: 768px) {
+            @media ( min-width: 768px ) {
 
                 max-height: 100vh;
                 overflow-y: auto;
@@ -58,11 +61,12 @@ $backgroundColor: #FFF;
 
         margin: 0 0 16px;
 
-        @media (min-width: 768px) {
+        @media ( min-width: 768px ) {
 
-            margin-bottom: 0px;
+            margin-bottom: 0;
 
         }
 
     }
+
 }

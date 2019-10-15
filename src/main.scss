@@ -1,10 +1,10 @@
-$colorStart: #76B69C;
-$colorEnd: #004357;
+$color-start: #76b69c;
+$color-end: #004357;
 
 :root {
 
-    --color-start: #{$colorStart};
-    --color-end: #{$colorEnd};
+    --color-start: #{$color-start};
+    --color-end: #{$color-end};
 
     font-size: 16px;
 
@@ -13,12 +13,11 @@ $colorEnd: #004357;
 // Skeleton
 body {
 
-    line-height: 1.5;
-
     padding-top: env( safe-area-inset-top, 0 );
     padding-right: env( safe-area-inset-right, 0 );
     padding-bottom: env( safe-area-inset-bottom, 0 );
     padding-left: env( safe-area-inset-left, 0 );
+    line-height: 1.5;
 
 }
 
@@ -30,13 +29,13 @@ button,
 a {
 
     display: inline-block;
-    margin: 0 4px 4px;
 
-    will-change: auto;
-    transition: all .3s cubic-bezier( .455, .03, .515, .955 );
+    margin: 0 4px 4px;
+    border-width: 0;
 
     border-radius: 3px;
-    border-width: 0;
+    transition: all .3s cubic-bezier( .455, .03, .515, .955 );
+    will-change: auto;
 
 }
 
@@ -45,15 +44,15 @@ a {
 .button,
 button {
 
-    color: #FFF;
-    padding: 8px 24px;
     margin-top: 24px;
-    appearance: none;
+    padding: 8px 24px;
+    color: #fff;
     text-decoration: none;
     background: rgba( 0, 67, 87, .2 );
-    background-image: linear-gradient( 90deg, #{$colorStart}, #{$colorEnd});
-    background-image: linear-gradient( 90deg, var(--color-start, #{$colorStart}), var(--color-end, #{$colorEnd}) );
+    background-image: linear-gradient( 90deg, #{$color-start}, #{$color-end} );
+    background-image: linear-gradient( 90deg, var( --color-start, #{$color-start} ), var( --color-end, #{$color-end} ) );
     background-position: left center;
+    appearance: none;
 
     &:hover {
 
@@ -66,8 +65,8 @@ button {
 .markdown-body a,
 a {
 
-    color: #{$colorStart};
-    color: var(--color-start, #{$colorStart});
+    color: #{$color-start};
+    color: var( --color-start, #{$color-start} );
 
 }
 
@@ -99,8 +98,8 @@ a {
     &--blue {
 
         background: rgba( 0, 67, 87, .2 );
-        background: linear-gradient( 180deg, #{$colorEnd}, transparent );
-        background: linear-gradient( 180deg, var(--color-end, #{$colorEnd}), transparent );
+        background: linear-gradient( 180deg, #{$color-end}, transparent );
+        background: linear-gradient( 180deg, var( --color-end, #{$color-end} ), transparent );
 
     }
 
