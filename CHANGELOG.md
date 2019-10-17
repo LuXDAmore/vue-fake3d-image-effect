@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.2](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.2.1...v1.2.2) (2019-10-17)
+
+- CHORE: Updated version of vue-cli.
+
 ## [1.2.1](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.2.0...v1.2.1) (2019-09-23)
 
 - CHORE: Updated documentations.
