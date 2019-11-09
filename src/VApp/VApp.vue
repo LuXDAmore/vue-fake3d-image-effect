@@ -80,12 +80,12 @@
     // Highlight config
     hljs.registerLanguage(
         'bash',
-        bash
+        bash,
     );
 
     hljs.registerLanguage(
         'javascript',
-        javascript
+        javascript,
     );
 
     // App
@@ -102,7 +102,7 @@
                     this.initHighlight();
                     this.initReadmeLinks();
 
-                }
+                },
             );
 
         },
@@ -110,27 +110,27 @@
             initHighlight() {
 
                 const PRE = document.querySelectorAll(
-                    'pre'
+                    'pre',
                 );
 
                 PRE.forEach(
                     block => hljs.highlightBlock(
-                        block
-                    )
+                        block,
+                    ),
                 );
 
             },
             initReadmeLinks() {
 
                 const links = document.querySelectorAll(
-                    '.readme > article a'
+                    '.readme > article a',
                 );
 
                 for( var i = 0; i < links.length; i ++ ) {
 
                     links[ i ].setAttribute(
                         'target',
-                        '_blank'
+                        '_blank',
                     );
 
                 }

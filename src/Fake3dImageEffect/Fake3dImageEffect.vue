@@ -99,7 +99,7 @@
                 const CLASSES = [ COMPONENT ];
 
                 this.centered && CLASSES.push(
-                    `${ COMPONENT }--centered`
+                    `${ COMPONENT }--centered`,
                 );
 
                 return CLASSES;
@@ -112,7 +112,7 @@
                 ;
 
                 this.fillHeightContent && CLASSES.push(
-                    `${ MAIN_CLASS }--fill-height`
+                    `${ MAIN_CLASS }--fill-height`,
                 );
 
                 return CLASSES;
@@ -130,7 +130,7 @@
         mounted() {
 
             this.image && this.imageMap && this.$nextTick(
-                this.init
+                this.init,
             );
 
         },
@@ -140,7 +140,7 @@
                 try {
 
                     new Sketch(
-                        this.$refs.gl
+                        this.$refs.gl,
                     );
 
                 } catch( e ) {
@@ -148,7 +148,7 @@
                     console.error(
                         {
                             e,
-                        }
+                        },
                     );
 
                 }

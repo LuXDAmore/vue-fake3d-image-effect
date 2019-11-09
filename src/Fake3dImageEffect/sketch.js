@@ -14,15 +14,15 @@ export default class Sketch {
         this.container = element;
 
         this.canvas = document.createElement(
-            'canvas'
+            'canvas',
         );
         this.container.appendChild(
-            this.canvas
+            this.canvas,
         );
         this.gl = this.canvas.getContext(
-            'webgl'
+            'webgl',
         );
-        this.ratio = window.devicePixelRatio;
+        this.ratio = window.devicePixelRatio; // eslint-disable-line
         this.windowWidth = window.innerWidth;
         this.windowHeight = window.innerHeight;
 
@@ -34,16 +34,16 @@ export default class Sketch {
         this.maxTilt = 15;
 
         this.imageOriginal = this.container.getAttribute(
-            'data-image-original'
+            'data-image-original',
         );
         this.imageDepth = this.container.getAttribute(
-            'data-image-depth'
+            'data-image-depth',
         );
         this.vth = this.container.getAttribute(
-            'data-vertical-threshold'
+            'data-vertical-threshold',
         );
         this.hth = this.container.getAttribute(
-            'data-horizontal-threshold'
+            'data-horizontal-threshold',
         );
 
         this.imageURLs = [
@@ -63,24 +63,24 @@ export default class Sketch {
     }
     addShader(
         source,
-        type
+        type,
     ) {
 
         const shader = this.gl.createShader(
-            type
+            type,
         );
 
         this.gl.shaderSource(
             shader,
-            source
+            source,
         );
         this.gl.compileShader(
-            shader
+            shader,
         );
 
         const isCompiled = this.gl.getShaderParameter(
             shader,
-            this.gl.COMPILE_STATUS
+            this.gl.COMPILE_STATUS,
         );
 
         if( ! isCompiled ) {
@@ -88,15 +88,15 @@ export default class Sketch {
             throw new Error(
                 'Shader compile error:',
                 this.gl.getShaderInfoLog(
-                    shader
-                )
+                    shader,
+                ),
             );
 
         }
 
         this.gl.attachShader(
             this.program,
-            shader
+            shader,
         );
 
     }
@@ -131,20 +131,20 @@ export default class Sketch {
             this.width,
             this.height,
             a1,
-            a2
+            a2,
         );
         this.uRatio.set(
-            1 / this.ratio
+            1 / this.ratio,
         );
         this.uThreshold.set(
             this.hth,
-            this.vth
+            this.vth,
         );
         this.gl.viewport(
             0,
             0,
             this.width * this.ratio,
-            this.height * this.ratio
+            this.height * this.ratio,
         );
 
     }
@@ -155,8 +155,8 @@ export default class Sketch {
         window.addEventListener(
             'resize',
             this.resizeHandler.bind(
-                this
-            )
+                this,
+            ),
         );
 
     }
@@ -166,60 +166,60 @@ export default class Sketch {
 
         this.addShader(
             vertex,
-            this.gl.VERTEX_SHADER
+            this.gl.VERTEX_SHADER,
         );
         this.addShader(
             fragment,
-            this.gl.FRAGMENT_SHADER
+            this.gl.FRAGMENT_SHADER,
         );
 
         this.gl.linkProgram(
-            this.program
+            this.program,
         );
         this.gl.useProgram(
-            this.program
+            this.program,
         );
 
         this.uResolution = new Uniform(
             'resolution',
             '4f',
             this.program,
-            this.gl
+            this.gl,
         );
         this.uMouse = new Uniform(
             'mouse',
             '2f',
             this.program,
-            this.gl
+            this.gl,
         );
         this.uTime = new Uniform(
             'time',
             '1f',
             this.program,
-            this.gl
+            this.gl,
         );
         this.uRatio = new Uniform(
             'pixelRatio',
             '1f',
             this.program,
-            this.gl
+            this.gl,
         );
         this.uThreshold = new Uniform(
             'threshold',
             '2f',
             this.program,
-            this.gl
+            this.gl,
         );
         // create position attrib
         this.billboard = new Rect(
-            this.gl
+            this.gl,
         );
         this.positionLocation = this.gl.getAttribLocation(
             this.program,
-            'a_position'
+            'a_position',
         );
         this.gl.enableVertexAttribArray(
-            this.positionLocation
+            this.positionLocation,
         );
         this.gl.vertexAttribPointer(
             this.positionLocation,
@@ -227,7 +227,7 @@ export default class Sketch {
             this.gl.FLOAT,
             false,
             0,
-            0
+            0,
         );
 
     }
@@ -238,13 +238,13 @@ export default class Sketch {
         loadImages(
             this.imageURLs,
             that.start.bind(
-                this
-            )
+                this,
+            ),
         );
 
     }
     start(
-        images
+        images,
     ) {
 
         const that = this
@@ -259,29 +259,29 @@ export default class Sketch {
 
             gl.bindTexture(
                 gl.TEXTURE_2D,
-                texture
+                texture,
             );
 
             // Set the parameters so we can render any size image.
             gl.texParameteri(
                 gl.TEXTURE_2D,
                 gl.TEXTURE_WRAP_S,
-                gl.CLAMP_TO_EDGE
+                gl.CLAMP_TO_EDGE,
             );
             gl.texParameteri(
                 gl.TEXTURE_2D,
                 gl.TEXTURE_WRAP_T,
-                gl.CLAMP_TO_EDGE
+                gl.CLAMP_TO_EDGE,
             );
             gl.texParameteri(
                 gl.TEXTURE_2D,
                 gl.TEXTURE_MIN_FILTER,
-                gl.LINEAR
+                gl.LINEAR,
             );
             gl.texParameteri(
                 gl.TEXTURE_2D,
                 gl.TEXTURE_MAG_FILTER,
-                gl.LINEAR
+                gl.LINEAR,
             );
 
             // Upload the image into the texture.
@@ -291,11 +291,11 @@ export default class Sketch {
                 gl.RGBA,
                 gl.RGBA,
                 gl.UNSIGNED_BYTE,
-                images[ i ]
+                images[ i ],
             );
 
             this.textures.push(
-                texture
+                texture,
             );
 
         }
@@ -303,37 +303,37 @@ export default class Sketch {
         // lookup the sampler locations.
         const u_image0Location = this.gl.getUniformLocation(
                 this.program,
-                'image0'
+                'image0',
             )
             , u_image1Location = this.gl.getUniformLocation(
                 this.program,
-                'image1'
+                'image1',
             )
         ;
 
         // set which texture units to render with.
         this.gl.uniform1i(
             u_image0Location,
-            0
+            0,
         ); // texture unit 0
         this.gl.uniform1i(
             u_image1Location,
-            1
+            1,
         ); // texture unit 1
 
         this.gl.activeTexture(
-            this.gl.TEXTURE0
+            this.gl.TEXTURE0,
         );
         this.gl.bindTexture(
             this.gl.TEXTURE_2D,
-            this.textures[ 0 ]
+            this.textures[ 0 ],
         );
         this.gl.activeTexture(
-            this.gl.TEXTURE1
+            this.gl.TEXTURE1,
         );
         this.gl.bindTexture(
             this.gl.TEXTURE_2D,
-            this.textures[ 1 ]
+            this.textures[ 1 ],
         );
 
         // start application
@@ -351,7 +351,7 @@ export default class Sketch {
             .init(
                 {
                     gravityNormalized: true,
-                }
+                },
             )
             .then(
                 () => {
@@ -366,28 +366,28 @@ export default class Sketch {
                             that.mouseTargetY = clamp(
                                 x,
                                 - that.maxTilt,
-                                that.maxTilt
+                                that.maxTilt,
                             ) / that.maxTilt;
 
                             that.mouseTargetX = - clamp(
                                 y,
                                 - that.maxTilt,
-                                that.maxTilt
+                                that.maxTilt,
                             ) / that.maxTilt;
 
-                        }
+                        },
                     );
 
-                }
+                },
             ).catch(
                 e => {
 
                     console.error(
                         'Gyro not supported',
-                        e
+                        e,
                     );
 
-                }
+                },
             )
         ;
 
@@ -407,7 +407,7 @@ export default class Sketch {
                 that.mouseTargetX = ( halfX - e.clientX ) / halfX;
                 that.mouseTargetY = ( halfY - e.clientY ) / halfY;
 
-            }
+            },
         );
 
     }
@@ -418,7 +418,7 @@ export default class Sketch {
         ;
 
         this.uTime.set(
-            currentTime
+            currentTime,
         );
         // inertia
         this.mouseX += ( this.mouseTargetX - this.mouseX ) * 0.05;
@@ -427,17 +427,17 @@ export default class Sketch {
 
         this.uMouse.set(
             this.mouseX,
-            this.mouseY
+            this.mouseY,
         );
 
         // render
         this.billboard.render(
-            this.gl
+            this.gl,
         );
         requestAnimationFrame(
             this.render.bind(
-                this
-            )
+                this,
+            ),
         );
 
     }
@@ -445,7 +445,7 @@ export default class Sketch {
 
 function loadImage(
     url,
-    callback
+    callback,
 ) {
 
     const image = new Image();
@@ -457,7 +457,7 @@ function loadImage(
 
         console.error(
             'Unable to load image',
-            image
+            image,
         );
 
         callback();
@@ -470,7 +470,7 @@ function loadImage(
 
 function loadImages(
     urls,
-    callback
+    callback,
 ) {
 
     let imagesToLoad = urls.length;
@@ -483,7 +483,7 @@ function loadImages(
             if( imagesToLoad === 0 ) {
 
                 callback(
-                    images
+                    images,
                 );
 
             }
@@ -495,11 +495,11 @@ function loadImages(
 
         const image = loadImage(
             urls[ ii ],
-            onImageLoad
+            onImageLoad,
         );
 
         images.push(
-            image
+            image,
         );
 
     }
@@ -510,7 +510,7 @@ function Uniform(
     name,
     suffix,
     program,
-    gl
+    gl,
 ) {
 
     this.name = name;
@@ -519,7 +519,7 @@ function Uniform(
     this.program = program;
     this.location = gl.getUniformLocation(
         program,
-        name
+        name,
     );
 
 }
@@ -530,30 +530,30 @@ Uniform.prototype.set = function(
 
     const method = `uniform${ this.suffix }`
         , args = [ this.location ].concat(
-            values
+            values,
         )
     ;
 
     this.gl[ method ].apply(
-        this.gl, args
+        this.gl, args,
     );
 
 };
 
 function Rect(
-    gl
+    gl,
 ) {
 
     const buffer = gl.createBuffer();
 
     gl.bindBuffer(
         gl.ARRAY_BUFFER,
-        buffer
+        buffer,
     );
     gl.bufferData(
         gl.ARRAY_BUFFER,
         Rect.verts,
-        gl.STATIC_DRAW
+        gl.STATIC_DRAW,
     );
 
 }
@@ -571,23 +571,23 @@ try {
                 , 1
                 , 1
                 , 1,
-        ]
+        ],
     );
 
 } catch( e ) {
 
     console.error(
-        e
+        e,
     );
 
 }
 
 Rect.prototype.render = function(
-    gl
+    gl,
 ) {
 
     gl.drawArrays(
-        gl.TRIANGLE_STRIP, 0, 4
+        gl.TRIANGLE_STRIP, 0, 4,
     );
 
 };
@@ -595,7 +595,7 @@ Rect.prototype.render = function(
 function clamp(
     number,
     lower,
-    upper
+    upper,
 ) {
 
     if( typeof upper !== 'undefined' )

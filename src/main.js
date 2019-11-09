@@ -14,13 +14,13 @@ import Fake3dImageEffect from './Fake3dImageEffect/Fake3dImageEffect.vue';
 // Install
 Vue.component(
     Fake3dImageEffect.name,
-    Fake3dImageEffect
+    Fake3dImageEffect,
 );
 
 // Library data
 Vue.use(
     Library,
-    process.env
+    process.env,
 );
 
 // Config
@@ -33,7 +33,7 @@ new Vue(
     {
         el: '#app',
         render: h => h(
-            VApp
+            VApp,
         ),
-    }
+    },
 );

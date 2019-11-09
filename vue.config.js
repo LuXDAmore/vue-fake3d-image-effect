@@ -21,22 +21,22 @@ module.exports = {
         },
     },
     chainWebpack(
-        config
+        config,
     ) {
 
         config.resolve.symlinks(
-            false
+            false,
         );
 
         config.module
             .rule(
-                'vue'
+                'vue',
             )
             .use(
-                'vue-loader'
+                'vue-loader',
             )
             .loader(
-                'vue-loader'
+                'vue-loader',
             )
             .tap(
                 options => {
@@ -46,7 +46,7 @@ module.exports = {
 
                     return options;
 
-                }
+                },
             )
         ;
 
@@ -54,16 +54,16 @@ module.exports = {
         // Vertex loader
         config.module
             .rule(
-                'glslify'
+                'glslify',
             )
             .test(
-                /\.(glsl|vs|fs|vert|frag)$/
+                /\.(glsl|vs|fs|vert|frag)$/,
             )
             .use(
-                'raw-loader'
+                'raw-loader',
             )
             .loader(
-                'raw-loader'
+                'raw-loader',
             )
             .end()
         ;
@@ -71,23 +71,23 @@ module.exports = {
         // Markdown
         config.module
             .rule(
-                'md'
+                'md',
             )
             .test(
-                /\.md/
+                /\.md/,
             )
             .use(
-                'vue-loader'
+                'vue-loader',
             )
             .loader(
-                'vue-loader'
+                'vue-loader',
             )
             .end()
             .use(
-                'vue-markdown-loader'
+                'vue-markdown-loader',
             )
             .loader(
-                'vue-markdown-loader/lib/markdown-compiler'
+                'vue-markdown-loader/lib/markdown-compiler',
             )
             .options(
                 {
@@ -96,7 +96,7 @@ module.exports = {
                     breaks: true,
                     typographer: true,
                     preventExtract: true,
-                }
+                },
             )
         ;
 
