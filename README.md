@@ -182,3 +182,5 @@ _Check `Preparing the image` section for how to do the `image-map`_
 #### Hire me
 
 [![Otechie](https://api.otechie.com/consultancy/luca-iaconelli/badge.svg)](https://otechie.com/luca-iaconelli)
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/luxdamore)
