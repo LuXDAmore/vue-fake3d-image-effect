@@ -129,7 +129,7 @@
         },
         mounted() {
 
-            this.image && this.imageMap && this.$nextTick(
+            this.$nextTick(
                 this.init,
             );
 
