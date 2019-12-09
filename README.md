@@ -1,8 +1,12 @@
-# Vue Fake3d image effect
+# 🎉 Vue Fake3d image effect
 
 [DEMO](https://luxdamore.github.io/vue-fake3d-image-effect)
 
-A fake 3D Image Effect with WebGL - w/ VueJS - SSR Compatible
+> A fake 3D Image Effect with WebGL - w/ VueJS - SSR Compatible
+
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
 
 ## Installation
 
@@ -150,37 +154,46 @@ This package is available on npm.
 | fill-height-content | Boolean | false | false | Style `height: 100%` for the default slot |
 | width | String | 100% | false | Width of component |
 | height | String | 100vh | false | Height of component |
+___
 
-## Issues
+[npm-version-src]: https://img.shields.io/npm/v/@luxdamore/vue-fake3d-image-effect/latest.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@luxdamore/vue-fake3d-image-effect
 
-Please make sure to read the [Issue Reporting Checklist](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
+[npm-downloads-src]: https://img.shields.io/npm/dt/@luxdamore/vue-fake3d-image-effect.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@luxdamore/vue-fake3d-image-effect
 
-## Contribution
+[license-src]: https://img.shields.io/npm/l/@luxdamore/vue-fake3d-image-effect.svg?style=flat-square
+[license-href]: https://npmjs.com/package/@luxdamore/vue-fake3d-image-effect
 
-Please make sure to read the [Contributing Guide](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/.github/ISSUE_TEMPLATE/feature_request.md) before making a pull request.
+## 🐞 Issues
 
-## Changelog
+Please make sure to read the [Issue Reporting Checklist](/.github/ISSUE_TEMPLATE/bug_report.md) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
-Details changes for each release are documented in the [release notes](https://github.com/LuXDAmore/vue-fake3d-image-effect/blob/master/CHANGELOG.md).
+## 👥 Contribution
 
-### License
+Please make sure to read the [Contributing Guide](/.github/ISSUE_TEMPLATE/feature_request.md) before making a pull request.
 
-[MIT](http://opensource.org/licenses/MIT) // Copyright (©) 2019-present [Luca Iaconelli](https://lucaiaconelli.it)
+## 📖 Changelog
 
-#### Are you feeling generous today?  :)
+Details changes for each release are documented in the [**release notes**](./CHANGELOG.md).
 
-You can donate me a beer, we can be good friends
-__[Paypal](https://www.paypal.me/luxdamore) // [Patreon](https://www.patreon.com/luxdamore)__
+### 📃 License
 
-_It's always a good day to be magnanimous - cit_
+[MIT License](./LICENSE) // Copyright (©) 2019-present [Luca Iaconelli](https://lucaiaconelli.it)
 
-#### Inspired by
+#### 💸 Are you feeling generous today?  :)
+
+Do you want to share a beer? We can be good friends.. __[Paypal](https://www.paypal.me/luxdamore) // [Patreon](https://www.patreon.com/luxdamore)__
+
+> _It's always a good day to be magnanimous - cit_
+
+#### 💼 Hire me
+
+[![Otechie](https://api.otechie.com/consultancy/luxdamore/badge.svg)](https://otechie.com/luxdamore)
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/luxdamore)
+
+#### 💘 Inspired by
 
 [Fake3dImageEffect by Tympanus](https://tympanus.net/codrops/2019/02/20/how-to-create-a-fake-3d-image-effect-with-webgl/)
 _Check `Preparing the image` section for how to do the `image-map`_
-
-#### Hire me
-
-[![Otechie](https://api.otechie.com/consultancy/luca-iaconelli/badge.svg)](https://otechie.com/luca-iaconelli)
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/luxdamore)
