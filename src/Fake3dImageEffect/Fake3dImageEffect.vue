@@ -1,6 +1,7 @@
 <template>
     <component
         :is="tag"
+        class="fake3d-image-effect"
         :class="classes"
         :style="styles"
     >
@@ -15,21 +16,22 @@
         />
 
         <div
-            v-if="$slots.overlay || $scopedSlots.overlay"
+            v-if="!! $slots.overlay || !! $scopedSlots.overlay"
             class="fake3d-image-effect__overlay"
         >
             <slot name="overlay" />
         </div>
 
         <div
-            v-if="$slots.default || $scopedSlots.default"
+            v-if="!! $slots.default || !! $scopedSlots.default"
             :class="contentClasses"
+            class="fake3d-image-effect__content"
         >
             <slot :init="init" />
         </div>
 
         <div
-            v-if="$slots.footer || $scopedSlots.footer"
+            v-if="!! $slots.footer || !! $scopedSlots.footer"
             class="fake3d-image-effect__footer"
         >
             <slot name="footer" />
@@ -42,12 +44,9 @@
     // Sketch
     import Sketch from './sketch.js';
 
-    // Init
-    const COMPONENT = 'fake3d-image-effect';
-
     // Component
     export default {
-        name: COMPONENT,
+        name: 'fake3d-image-effect',
         inheritAttrs: false,
         props: {
             tag: {
@@ -96,26 +95,16 @@
         computed: {
             classes() {
 
-                const CLASSES = [ COMPONENT ];
-
-                this.centered && CLASSES.push(
-                    `${ COMPONENT }--centered`,
-                );
-
-                return CLASSES;
+                return {
+                    'fake3d-image-effect--centered': this.centered,
+                };
 
             },
             contentClasses() {
 
-                const MAIN_CLASS = `${ COMPONENT }__content`
-                      , CLASSES = [ MAIN_CLASS ]
-                ;
-
-                this.fillHeightContent && CLASSES.push(
-                    `${ MAIN_CLASS }--fill-height`,
-                );
-
-                return CLASSES;
+                return {
+                    'fake3d-image-effect__content--fill-height': this.fillHeightContent,
+                };
 
             },
             styles() {
