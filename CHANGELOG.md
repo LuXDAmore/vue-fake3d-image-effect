@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.5](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.2.4...v1.2.5) (2019-12-19)
+
+- chore: updated dev dep
+- refactor: classes and slots data evaluation
+
 ## [1.2.4](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.2.3...v1.2.4) (2019-12-09)
 
 - CHORE: Updated DevDep.
