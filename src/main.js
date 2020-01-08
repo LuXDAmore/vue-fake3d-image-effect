@@ -29,7 +29,6 @@ const IS_DEV = process.env.NODE_ENV === 'development';
 Vue.config.silent = ! IS_DEV;
 Vue.config.productionTip = IS_DEV;
 
-
 const vm = new Vue(
     {
         render: h => h(
