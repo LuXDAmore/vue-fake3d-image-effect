@@ -1,10 +1,12 @@
 $color-start: #76b69c;
 $color-end: #004357;
+$color-accessible: #2c3e50;
 
 :root {
 
     --color-start: #{$color-start};
     --color-end: #{$color-end};
+    --color-accessible: #{$color-accessible};
 
     font-size: 16px;
 
@@ -86,7 +88,7 @@ a {
 
     &--white {
 
-        color: white;
+        color: #fff;
 
     }
 
@@ -100,6 +102,20 @@ a {
         background: rgba( 0, 67, 87, .2 );
         background: linear-gradient( 180deg, #{$color-end}, transparent );
         background: linear-gradient( 180deg, var( --color-end, #{$color-end} ), transparent );
+
+    }
+
+}
+
+.markdown-body {
+
+    .hljs-meta,
+    .hljs-meta-keyword,
+    .hljs-attr,
+    .hljs-comment {
+
+        color: #{$color-accessible} !important;
+        color: var( --color-accessible, #{$color-accessible} ) !important;
 
     }
 
