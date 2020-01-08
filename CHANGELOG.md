@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.2.5...v1.3.0) (2019-01-08)
+
+- feat: added max-tilt prop
+- feat: added gyro prop
+- docs: updated documentation
+- chore: updated dev dep
+- chore: linted
+
 ## [1.2.5](https://github.com/LuXDAmore/vue-fake3d-image-effect/compare/v1.2.4...v1.2.5) (2019-12-19)
 
 - chore: updated dev dep
