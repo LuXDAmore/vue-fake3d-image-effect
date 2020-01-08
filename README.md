@@ -199,4 +199,10 @@ Do you want to share a beer? We can be good friends.. __[Paypal](https://www.pay
 #### 💘 Inspired by
 
 [Fake3dImageEffect by Tympanus](https://tympanus.net/codrops/2019/02/20/how-to-create-a-fake-3d-image-effect-with-webgl/)
-_Check `Preparing the image` section for how to do the `image-map`_
+> _Check `Preparing the image` section for how to do the `image-map`._
+
+___
+
+##### 💡 Lighthouse
+
+![Lighthouse audit score](./lighthouse-audit.jpg)
