@@ -113,6 +113,17 @@ GlobalVue && GlobalVue.use(plugin); // To allow use as module (npm/webpack/etc.)
 
 /***/ }),
 
+/***/ "2818":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_3c630f61_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("6eb5");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_3c630f61_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_3c630f61_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_3c630f61_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "457e":
 /***/ (function(module, exports) {
 
@@ -1444,14 +1455,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "95fb":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "6eb5":
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_7b18c740_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("eb26");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_7b18c740_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_7b18c740_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_id_7b18c740_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -1460,12 +1467,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed6451a0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Fake3dImageEffect/Fake3dImageEffect.vue?vue&type=template&id=7b18c740&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"fake3d-image-effect",class:_vm.classes,style:(_vm.styles)},[_c('div',{ref:"gl",staticClass:"fake3d-image-effect__image",attrs:{"data-image-original":_vm.image,"data-image-depth":_vm.imageMap,"data-horizontal-threshold":_vm.horizontal,"data-vertical-threshold":_vm.vertical}}),(!! _vm.$slots.overlay || !! _vm.$scopedSlots.overlay)?_c('div',{staticClass:"fake3d-image-effect__overlay"},[_vm._t("overlay")],2):_vm._e(),(!! _vm.$slots.default || !! _vm.$scopedSlots.default)?_c('div',{staticClass:"fake3d-image-effect__content",class:_vm.contentClasses},[_vm._t("default",null,{"init":_vm.init})],2):_vm._e(),(!! _vm.$slots.footer || !! _vm.$scopedSlots.footer)?_c('div',{staticClass:"fake3d-image-effect__footer"},[_vm._t("footer")],2):_vm._e()])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33f1be00-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Fake3dImageEffect/Fake3dImageEffect.vue?vue&type=template&id=3c630f61&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"fake3d-image-effect",class:_vm.classes,style:(_vm.styles)},[_c('div',{ref:"gl",staticClass:"fake3d-image-effect__image",attrs:{"data-image-original":_vm.image,"data-image-depth":_vm.imageMap,"data-horizontal-threshold":_vm.horizontal,"data-vertical-threshold":_vm.vertical}}),(!! _vm.$slots.overlay || !! _vm.$scopedSlots.overlay)?_c('div',{staticClass:"fake3d-image-effect__overlay"},[_vm._t("overlay")],2):_vm._e(),(!! _vm.$slots.default || !! _vm.$scopedSlots.default)?_c('div',{staticClass:"fake3d-image-effect__content"},[_vm._t("default",null,{"init":_vm.init})],2):_vm._e(),(!! _vm.$slots.footer || !! _vm.$scopedSlots.footer)?_c('div',{staticClass:"fake3d-image-effect__footer"},[_vm._t("footer")],2):_vm._e()])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/Fake3dImageEffect/Fake3dImageEffect.vue?vue&type=template&id=7b18c740&scoped=true&
+// CONCATENATED MODULE: ./src/Fake3dImageEffect/Fake3dImageEffect.vue?vue&type=template&id=3c630f61&scoped=true&
 
 // EXTERNAL MODULE: ./src/Fake3dImageEffect/fulltilt.js
 var fulltilt = __webpack_require__("457e");
@@ -1479,6 +1486,12 @@ var gyronorm_default = /*#__PURE__*/__webpack_require__.n(gyronorm);
 // CONCATENATED MODULE: ./src/Fake3dImageEffect/shaders/vertex.glsl
 /* harmony default export */ var vertex = ("attribute vec2 a_position;\n\nvoid main() {\n\n    gl_Position = vec4( a_position, 0, 1 );\n\n}\n");
 // CONCATENATED MODULE: ./src/Fake3dImageEffect/sketch.js
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1496,6 +1509,9 @@ var sketch_Sketch =
 /*#__PURE__*/
 function () {
   function Sketch(element) {
+    var gyroConfig = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var maxTilt = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 15;
+
     _classCallCheck(this, Sketch);
 
     this.container = element;
@@ -1510,7 +1526,7 @@ function () {
     this.mouseY = 0;
     this.mouseTargetX = 0;
     this.mouseTargetY = 0;
-    this.maxTilt = 15;
+    this.maxTilt = maxTilt;
     this.imageOriginal = this.container.getAttribute('data-image-original');
     this.imageDepth = this.container.getAttribute('data-image-depth');
     this.vth = this.container.getAttribute('data-vertical-threshold');
@@ -1522,7 +1538,7 @@ function () {
     this.createScene();
     this.addTexture();
     this.mouseMove();
-    this.gyro();
+    this.gyro(gyroConfig);
   }
 
   _createClass(Sketch, [{
@@ -1636,11 +1652,12 @@ function () {
   }, {
     key: "gyro",
     value: function gyro() {
+      var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       var that = this,
           gn = new gyronorm_default.a();
-      gn.init({
+      gn.init(_objectSpread({
         gravityNormalized: true
-      }).then(function () {
+      }, config)).then(function () {
         gn.start(function (data) {
           var y = data["do"].gamma,
               x = data["do"].beta;
@@ -1797,7 +1814,6 @@ function clamp(number, lower, upper) {
 //
 //
 //
-//
 // Sketch
  // Component
 
@@ -1825,6 +1841,10 @@ function clamp(number, lower, upper) {
       type: [Number, String],
       "default": 23
     },
+    maxTilt: {
+      type: [Number, String],
+      "default": 15
+    },
     centered: {
       type: Boolean,
       "default": false
@@ -1840,17 +1860,17 @@ function clamp(number, lower, upper) {
     height: {
       type: String,
       "default": '100vh'
+    },
+    gyro: {
+      type: Object,
+      "default": function _default() {}
     }
   },
   computed: {
     classes: function classes() {
       return {
-        'fake3d-image-effect--centered': this.centered
-      };
-    },
-    contentClasses: function contentClasses() {
-      return {
-        'fake3d-image-effect__content--fill-height': this.fillHeightContent
+        'fake3d-image-effect--centered': this.centered,
+        'fake3d-image-effect--fill-height': this.fillHeightContent
       };
     },
     styles: function styles() {
@@ -1860,25 +1880,26 @@ function clamp(number, lower, upper) {
       };
     }
   },
+  created: function created() {
+    this.$sketch = null;
+  },
   mounted: function mounted() {
     this.$nextTick(this.init);
   },
   methods: {
     init: function init() {
       try {
-        new sketch_Sketch(this.$refs.gl);
+        this.$sketch = new sketch_Sketch(this.$refs.gl, this.gyro, parseInt(this.maxTilt));
       } catch (e) {
-        console.error({
-          e: e
-        });
+        if (false) {}
       }
     }
   }
 });
 // CONCATENATED MODULE: ./src/Fake3dImageEffect/Fake3dImageEffect.vue?vue&type=script&lang=js&
  /* harmony default export */ var Fake3dImageEffect_Fake3dImageEffectvue_type_script_lang_js_ = (Fake3dImageEffectvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/Fake3dImageEffect/style.scss?vue&type=style&index=0&id=7b18c740&scoped=true&lang=scss&
-var stylevue_type_style_index_0_id_7b18c740_scoped_true_lang_scss_ = __webpack_require__("95fb");
+// EXTERNAL MODULE: ./src/Fake3dImageEffect/style.scss?vue&type=style&index=0&id=3c630f61&scoped=true&lang=scss&
+var stylevue_type_style_index_0_id_3c630f61_scoped_true_lang_scss_ = __webpack_require__("2818");
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
@@ -1990,7 +2011,7 @@ var component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "7b18c740",
+  "3c630f61",
   null
   
 )
@@ -2023,13 +2044,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-
-/***/ "eb26":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
