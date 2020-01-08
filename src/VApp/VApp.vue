@@ -126,11 +126,21 @@
                     '.readme > article a',
                 );
 
-                for( var i = 0; i < links.length; i ++ ) {
+                for( let i = 0; i < links.length; i ++ ) {
 
                     links[ i ].setAttribute(
                         'target',
                         '_blank',
+                    );
+
+                    links[ i ].setAttribute(
+                        'rel',
+                        'noopener',
+                    );
+
+                    links[ i ].setAttribute(
+                        'alt',
+                        links[ i ].textContent,
                     );
 
                 }
