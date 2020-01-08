@@ -24,7 +24,6 @@
 
         <div
             v-if="!! $slots.default || !! $scopedSlots.default"
-            :class="contentClasses"
             class="fake3d-image-effect__content"
         >
             <slot :init="init" />
@@ -75,6 +74,13 @@
                 ],
                 default: 23,
             },
+            maxTilt: {
+                type: [
+                    Number,
+                    String,
+                ],
+                default: 15,
+            },
             centered: {
                 type: Boolean,
                 default: false,
@@ -91,19 +97,17 @@
                 type: String,
                 default: '100vh',
             },
+            gyro: {
+                type: Object,
+                default: () => {},
+            },
         },
         computed: {
             classes() {
 
                 return {
                     'fake3d-image-effect--centered': this.centered,
-                };
-
-            },
-            contentClasses() {
-
-                return {
-                    'fake3d-image-effect__content--fill-height': this.fillHeightContent,
+                    'fake3d-image-effect--fill-height': this.fillHeightContent,
                 };
 
             },
@@ -115,6 +119,11 @@
                 };
 
             },
+        },
+        created() {
+
+            this.$sketch = null;
+
         },
         mounted() {
 
@@ -128,17 +137,25 @@
 
                 try {
 
-                    new Sketch(
+                    this.$sketch = new Sketch(
                         this.$refs.gl,
+                        this.gyro,
+                        parseInt(
+                            this.maxTilt,
+                        ),
                     );
 
                 } catch( e ) {
 
-                    console.error(
-                        {
-                            e,
-                        },
-                    );
+                    if( process.env.NODE_ENV !== 'production' ) {
+
+                        console.error(
+                            {
+                                e,
+                            },
+                        );
+
+                    }
 
                 }
 
