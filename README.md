@@ -126,7 +126,8 @@ This package is available on npm.
 
 - Create a file in the `plugins` folder;
 - Name it `fake3d-image.client.js`;
-- Install it _as a plugin_ and import it in the `nuxt.config.js` file as [*client side only*](https://nuxtjs.org/guide/plugins/#client-side-only).
+- Install it _as a plugin_;
+- Import it in the `nuxt.config.js` file as [*client side only*](https://nuxtjs.org/guide/plugins/#client-side-only).
 
 ### Options
 
@@ -150,6 +151,8 @@ This package is available on npm.
 | image-map | String | null | true | The img-src-map path |
 | horizontal-threshold | String, Number | 18 | false | Sensibility for the X-ax |
 | vertical-threshold | String, Number | 23 | false | Sensibility for the Y-ax |
+| max-tilt | String, Number | 15 | false | Sensibility for the Tilt |
+| gyro | Object | { gravityNormalized:true, } | false | [Gyro config object](https://github.com/dorukeker/gyronorm.js) |
 | centered | Boolean | false | false | Style, `text-align: center` |
 | fill-height-content | Boolean | false | false | Style `height: 100%` for the default slot |
 | width | String | 100% | false | Width of component |
