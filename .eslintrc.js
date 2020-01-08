@@ -1,27 +1,13 @@
 module.exports = {
     root: true,
-    globals: {
-        process: true,
-        module: true,
-        require: true,
-        global: true,
-    },
-    env: {
-        es6: true,
-        browser: true,
-    },
     parserOptions: {
         parser: 'babel-eslint',
         sourceType: 'module',
-        ecmaVersion: 2019,
-        ecmaFeature: {
-            experimentalObjectRestSpread: true,
-            impliedStrict: true,
-            classes: true,
-        },
     },
     extends: [
+        '@nuxtjs',
         'eslint:recommended',
+        'plugin:nuxt/recommended',
         'plugin:vue/recommended',
         '@vue/prettier',
     ],
@@ -33,6 +19,7 @@ module.exports = {
         'unicorn',
     ],
     rules: {
+        'indent': 'off',
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'one-var': [
@@ -46,10 +33,7 @@ module.exports = {
         ],
         'spaced-comment': [ 'warn', 'always' ],
         'prefer-const': 'warn',
-        'no-useless-rename': [
-            'warn',
-            {},
-        ],
+        'no-useless-rename': 'warn',
         'rest-spread-spacing': [
             'warn',
             'always',
@@ -371,8 +355,8 @@ module.exports = {
             }
         ],
         'max-len': [
-            'off',
-            254,
+            'warn',
+            300,
             4,
             {
                 ignoreUrls: true,
@@ -385,6 +369,13 @@ module.exports = {
             72,
             {
                 ignoreTopLevelFunctions: true,
+            }
+        ],
+        'lines-between-class-members': [
+            'warn',
+            'always',
+            {
+                exceptAfterSingleLine: true,
             }
         ],
         // Plugins

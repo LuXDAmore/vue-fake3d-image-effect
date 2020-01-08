@@ -42,7 +42,11 @@
     "peacock.color": "#42b883",
     "cSpell.ignoreWords": [
         "amet",
-        "imgs"
+        "fulltilt",
+        "gyronorm",
+        "hljs",
+        "imgs",
+        "verts"
     ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
