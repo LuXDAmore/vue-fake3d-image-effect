@@ -551,7 +551,8 @@ Uniform.prototype.set = function(
     ;
 
     this.gl[ method ].apply(
-        this.gl, args,
+        this.gl,
+args,
     );
 
 };
@@ -603,7 +604,9 @@ Rect.prototype.render = function(
 ) {
 
     gl.drawArrays(
-        gl.TRIANGLE_STRIP, 0, 4,
+        gl.TRIANGLE_STRIP,
+0,
+4,
     );
 
 };
