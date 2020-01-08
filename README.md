@@ -1,8 +1,6 @@
 # 🎉 Vue Fake3d image effect
 
-[DEMO](https://luxdamore.github.io/vue-fake3d-image-effect)
-
-> A fake 3D Image Effect with WebGL - w/ VueJS - SSR Compatible
+> A fake 3D Image Effect made with WebGL - w/ VueJS - SSR Compatible
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -101,7 +99,6 @@ This package is available on npm.
 ```html
 
     <fake3d-image-effect
-        v-once
         centered
         fill-height-content
         tag="div"
@@ -199,7 +196,7 @@ Do you want to share a beer? We can be good friends.. __[Paypal](https://www.pay
 #### 💘 Inspired by
 
 [Fake3dImageEffect by Tympanus](https://tympanus.net/codrops/2019/02/20/how-to-create-a-fake-3d-image-effect-with-webgl/)
-> _Check `Preparing the image` section for how to do the `image-map`._
+> Check `Preparing the image` section for how to do the `image-map`.
 
 ___
 
