@@ -9,6 +9,8 @@ import vertex from './shaders/vertex.glsl';
 export default class Sketch {
     constructor(
         element,
+        gyroConfig = {},
+        maxTilt = 15,
     ) {
 
         this.container = element;
@@ -31,7 +33,7 @@ export default class Sketch {
         this.mouseTargetX = 0;
         this.mouseTargetY = 0;
 
-        this.maxTilt = 15;
+        this.maxTilt = maxTilt;
 
         this.imageOriginal = this.container.getAttribute(
             'data-image-original',
@@ -58,9 +60,12 @@ export default class Sketch {
         this.createScene();
         this.addTexture();
         this.mouseMove();
-        this.gyro();
+        this.gyro(
+            gyroConfig,
+        );
 
     }
+
     addShader(
         source,
         type,
@@ -100,6 +105,7 @@ export default class Sketch {
         );
 
     }
+
     resizeHandler() {
 
         this.windowWidth = window.innerWidth;
@@ -148,6 +154,7 @@ export default class Sketch {
         );
 
     }
+
     resize() {
 
         this.resizeHandler();
@@ -160,6 +167,7 @@ export default class Sketch {
         );
 
     }
+
     createScene() {
 
         this.program = this.gl.createProgram();
@@ -231,6 +239,7 @@ export default class Sketch {
         );
 
     }
+
     addTexture() {
 
         const that = this;
@@ -243,6 +252,7 @@ export default class Sketch {
         );
 
     }
+
     start(
         images,
     ) {
@@ -341,7 +351,10 @@ export default class Sketch {
         this.render();
 
     }
-    gyro() {
+
+    gyro(
+        config = {},
+    ) {
 
         const that = this
             , gn = new GyroNorm()
@@ -351,6 +364,7 @@ export default class Sketch {
             .init(
                 {
                     gravityNormalized: true,
+                    ... config,
                 },
             )
             .then(
@@ -392,6 +406,7 @@ export default class Sketch {
         ;
 
     }
+
     mouseMove() {
 
         const that = this;
@@ -411,6 +426,7 @@ export default class Sketch {
         );
 
     }
+
     render() {
 
         const now = new Date().getTime()
