@@ -11,6 +11,7 @@
         "davidanson.vscode-markdownlint",
         "dbaeumer.vscode-eslint",
         "mohseenrm.lit-it",
+        "ms-vscode.vscode-typescript-tslint-plugin",
         "mubaidr.vuejs-extension-pack",
         "jeremyrajan.webpack",
         "sysoev.language-stylus",
